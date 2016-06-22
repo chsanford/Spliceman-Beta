@@ -34,6 +34,7 @@ open( my $fh, $output_spliceman ) or die "$output_spliceman: $!";
 
 my $ESESEQ_ENHANCER = 0.5;
 my $ESESEQ_SUPPRESSOR = -0.5;
+#Enhancer/Suppressor values approximate
 
 my $HEXEMER_COLUMN = 1;
 my $ESESEQ_COLUMN = 23;
