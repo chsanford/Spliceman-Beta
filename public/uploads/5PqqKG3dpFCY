@@ -1,0 +1,12 @@
+Status: 500
+Content-type: text/html
+
+<h1>Software error:</h1>
+<pre>syntax error at /var/www/html/spliceman_beta/spliceman_2_ESEseq.pl line 89, near &quot;print&quot;
+Execution of /var/www/html/spliceman_beta/spliceman_2_ESEseq.pl aborted due to compilation errors.
+</pre>
+<p>
+For help, please send mail to this site's webmaster, giving this error message 
+and the time and date of the error.
+
+</p>
