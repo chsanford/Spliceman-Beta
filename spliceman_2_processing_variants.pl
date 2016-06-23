@@ -25,6 +25,7 @@ while ( my $line = <$fh> ) {
 
 	chomp ( $line );
 	my @line_array=split("\t",$line);
+
 	my $sequence_for_spliceman = $db -> seq($line_array[0],0,$db -> length($line_array[0]));
 	my @array = split(/\s+/, $sequence_for_spliceman);
 	

@@ -14,10 +14,10 @@
 //This is for the get event of the index page
 Route::get('output', function()
 {
-	return View::make('output');
+    return View::make('output');
 });
 Route::get('result', function(){
-	return View::make('results');
+    return View::make('results');
 });
 Route::get('methods', function()
 {
@@ -121,35 +121,35 @@ elseif (Input::get('process')) {
     // return $contents;
     if( $upload_success ) {
       //return "Yes!";
-    	//$file_new = $destinationPath."/".$filename;
-    	$filename_spliceman_new = $destinationPath."/".$filename_spliceman;
-    	$filename_RBPs_new = $destinationPath."/".$filename_RBPs;
-    	$filename_bedtools_new = $destinationPath."/".$filename_bedtools;
+        //$file_new = $destinationPath."/".$filename;
+        $filename_spliceman_new = $destinationPath."/".$filename_spliceman;
+        $filename_RBPs_new = $destinationPath."/".$filename_RBPs;
+        $filename_bedtools_new = $destinationPath."/".$filename_bedtools;
 
-    	exec("perl /var/www/html/spliceman_beta/vcf_fasta_v2.pl /var/www/html/spliceman_beta/hg19.fa '$file_new' '$filename_spliceman_new' '$filename_RBPs_new' '$filename_bedtools_new'", $output, $return);
+        exec("perl /var/www/html/spliceman_beta/vcf_fasta_v2.pl /var/www/html/spliceman_beta/hg19.fa '$file_new' '$filename_spliceman_new' '$filename_RBPs_new' '$filename_bedtools_new'", $output, $return);
 
   if ($return) {
-    	return Redirect::to('upload')->withInput()->withErrors("Error in pipeline, please contact administrator and provide step 1");
-	}
+        return Redirect::to('upload')->withInput()->withErrors("Error in pipeline, please contact administrator and provide step 1");
+    }
 
-	if (count($output)>0){
+    if (count($output)>0){
 
-		File::delete($destinationPath."/".$filename);
-		File::delete($destinationPath."/".$filename_spliceman);
-		File::delete($destinationPath."/".$filename_RBPs);
-		File::delete($destinationPath."/".$filename_bedtools);
+        File::delete($destinationPath."/".$filename);
+        File::delete($destinationPath."/".$filename_spliceman);
+        File::delete($destinationPath."/".$filename_RBPs);
+        File::delete($destinationPath."/".$filename_bedtools);
 
-		return Redirect::to('upload')->withInput()->withErrors($output);
-	}
+        return Redirect::to('upload')->withInput()->withErrors($output);
+    }
 
     $filename_bedtools_final_name = str_random(12);
     $filename_bedtools_final_loc = $destinationPath."/".$filename_bedtools_final_name;
 
     //if(count($filename_bedtools))
 
-		exec("bedtools intersect -wao -a '$filename_bedtools_new' -b /var/www/html/spliceman_beta/RefSeq_exon_intron_sum_corr.txt > '$filename_bedtools_final_loc'", $bedtools_array, $return);
-		
-		if ($return) {
+        exec("bedtools intersect -wao -a '$filename_bedtools_new' -b /var/www/html/spliceman_beta/RefSeq_exon_intron_sum_corr.txt > '$filename_bedtools_final_loc'", $bedtools_array, $return);
+        
+        if ($return) {
         File::delete($destinationPath."/".$filename);
         File::delete($destinationPath."/".$filename_spliceman);
         File::delete($destinationPath."/".$filename_RBPs);
@@ -160,12 +160,12 @@ elseif (Input::get('process')) {
         }
         //return $return;
         return Redirect::to('upload')->withInput()->withErrors("Error in pipeline, please contact administrator and provide step 2");
-		}
+        }
     //return "0";
 
     $filename_L1_distance_final_name = str_random(12);
     $filename_L1_distance_final_loc = $destinationPath."/".$filename_L1_distance_final_name;
-		exec("perl /var/www/html/spliceman_beta/spliceman_2_processing_variants.pl /var/www/html/spliceman_beta/hg19_L1_distance_only_hexamers_dif_by_one.fa '$filename_spliceman_new' > '$filename_L1_distance_final_loc'", $L1_distance_array, $return);
+        exec("perl /var/www/html/spliceman_beta/spliceman_2_processing_variants.pl /var/www/html/spliceman_beta/hg19_L1_distance_only_hexamers_dif_by_one.fa '$filename_spliceman_new' > '$filename_L1_distance_final_loc'", $L1_distance_array, $return);
 
     if ($return) {
         File::delete($destinationPath."/".$filename);
@@ -257,7 +257,7 @@ elseif (Input::get('process')) {
   //return $final_final_result;
 
         // File::put($filename_to_download, $final_final_result);
-	   // Session::flash('download.in.the.next.request', $filename_to_download);
+       // Session::flash('download.in.the.next.request', $filename_to_download);
     // return Redirect::to('result')->with('message',$final_final_result);
         return Response::download($filename_to_download); 
 
@@ -275,8 +275,8 @@ else {
   else{
 
 
-  	$input_text = Input::get('sequence');
-  	$filename = str_random(12);
+    $input_text = Input::get('sequence');
+    $filename = str_random(12);
     $filename2 = str_random(12);
     $destinationPath = public_path().'/uploads';
     $file_new = $destinationPath."/".$filename;
