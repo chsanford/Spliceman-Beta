@@ -26,6 +26,7 @@ $(function() {
 function drawDiagram(relDistArray){
     var canvas = Raphael(relDistArray.container.get(0),"100%","100%");
     var color = "#39b3d7";
+    
     if(relDistArray.isExon) {
         addIntron(100,200,100,2,canvas,[], '');
         addExon(200,400,100,50, canvas, color, relDistArray.name, [relDistArray.dist]);
@@ -57,6 +58,10 @@ function drawChartGroup(dataGroup) {
     var name = dataGroup.label;
     var data = dataGroup.l1_dist;
     var items = [];
+    if(dataGroup.l1_dist >= 1.3)
+        {var barColor = "#39b3d7";}
+    else
+        {var barColor = "#e96d63";}
     data.sort(function(a,b){
         var i1 = data.indexOf(a);
         var i2 = data.indexOf(b);
@@ -100,10 +105,10 @@ function drawChartGroup(dataGroup) {
         series: [{
             name: "absolute value of log10(p-value)",
             type: "column",
-            color: "#39b3d7",
+            color: barColor,
             data: data,
-            pointWidth: 20
-        }]
+            pointWidth: 20}]
+        
     });
 }
     
@@ -149,69 +154,92 @@ function populateTableGroup(dataGroup){
         }
         table.append(newrow);
     }
-    container.append(table);
+    container.append(table); 
 }
 
-function parseSpliceString(ss,ret){
+function parseSpliceString(data,ret){
+    CHR1_INDEX = 0;
+    MUT_POS_INDEX = 1;
+    CHR2_INDEX = 2;
+    BEG_EXON_INDEX = 3;
+    END_EXON_INDEX = 4;
+    GENE_INDEX = 5;
+    STRAND_INDEX = 6;
+    TERMINAL_INDEX = 7;
+    L1_PERCENTILE_INDEX = 9;
+    RBPS_INDEX = 10;
+
+    NUMBER_OF_RBPS = 5;
+
+    ss = data.split(/\n/);
+    ss.splice(ss.length - 1, 1); // Removes the extra element of the array
     var res = [];
-    for(j = 0; j< ss.length; j++) {
+    for(j = 0; j < ss.length; j++) {
         res[j] = ss[j].split(/\t/);
+        console.log(res[j]);
     }
     var data = [];
     var datagroup = {};
     for(i = 0; i < res.length; i++) {
-        if(datagroup.hasOwnProperty(res[i][3])) {
-            datagroup[res[i][3]].mut_pos.push(res[i][1]);
-            datagroup[res[i][3]].strand.push(res[i][6]);
-            datagroup[res[i][3]].terminal.push(res[i][7]);
-            datagroup[res[i][3]].l1_dist.push(Math.abs(Math.log10((100 - parseInt(res[i][8]))/100)));
+        if(datagroup.hasOwnProperty(res[i][BEG_EXON_INDEX])) {
+            datagroup[res[i][BEG_EXON_INDEX]].mut_pos.push(
+                res[i][MUT_POS_INDEX]);
+            datagroup[res[i][BEG_EXON_INDEX]].strand.push(
+                res[i][STRAND_INDEX]);
+            datagroup[res[i][BEG_EXON_INDEX]].terminal.push(
+                res[i][TERMINAL_INDEX]);
+            datagroup[res[i][BEG_EXON_INDEX]].l1_dist.push(
+                Math.abs(Math.log10((100 - parseInt(res[i][L1_PERCENTILE_INDEX]))/100)));
             var temp = [];
             for(j = 0; j < 5; j++) {
-                temp[j] = res[i][9+j];
+                temp[j] = res[i][RBPS_INDEX + j];
             }
-            datagroup[res[i][3]].rbps.push(temp);
+            datagroup[res[i][BEG_EXON_INDEX]].rbps.push(temp);
         } else {
-            datagroup[res[i][3]] = {};
-            datagroup[res[i][3]].chr1 = res[i][0];
-
-            datagroup[res[i][3]].mut_pos = [];
-            datagroup[res[i][3]].mut_pos.push(res[i][1]);
-
-            datagroup[res[i][3]].chr2 = res[i][2];
-            datagroup[res[i][3]].beg_exon = res[i][3];
-            datagroup[res[i][3]].name = res[i][0] + ": " + res[i][3];
-            datagroup[res[i][3]].end_exon = res[i][4];
-            datagroup[res[i][3]].gene = res[i][5];
+            datagroup[res[i][BEG_EXON_INDEX]] = {};
+            datagroup[res[i][BEG_EXON_INDEX]].chr1 = res[i][CHR1_INDEX];
+            datagroup[res[i][BEG_EXON_INDEX]].mut_pos = [];
+            datagroup[res[i][BEG_EXON_INDEX]].mut_pos.push(
+                res[i][MUT_POS_INDEX]);
+            datagroup[res[i][BEG_EXON_INDEX]].chr2 = res[i][CHR2_INDEX];
+            datagroup[res[i][BEG_EXON_INDEX]].beg_exon = res[i][BEG_EXON_INDEX];
+            datagroup[res[i][BEG_EXON_INDEX]].name = 
+                res[i][CHR1_INDEX] + ": " + res[i][BEG_EXON_INDEX];
+            datagroup[res[i][BEG_EXON_INDEX]].end_exon = res[i][END_EXON_INDEX];
+            datagroup[res[i][BEG_EXON_INDEX]].gene = res[i][GENE_INDEX];
             
-            datagroup[res[i][3]].strand = [];
-            datagroup[res[i][3]].strand.push(res[i][6]);
+            datagroup[res[i][BEG_EXON_INDEX]].strand = [];
+            datagroup[res[i][BEG_EXON_INDEX]].strand.push(res[i][STRAND_INDEX]);
             
-            datagroup[res[i][3]].terminal = [];
-            datagroup[res[i][3]].terminal.push(res[i][7]);
+            datagroup[res[i][BEG_EXON_INDEX]].terminal = [];
+            datagroup[res[i][BEG_EXON_INDEX]].terminal.push(
+                res[i][TERMINAL_INDEX]);
 
-            datagroup[res[i][3]].l1_dist = [];
-            datagroup[res[i][3]].l1_dist.push(Math.abs(Math.log10((100 - parseInt(res[i][8]))/100)));
+            datagroup[res[i][BEG_EXON_INDEX]].l1_dist = [];
+            datagroup[res[i][BEG_EXON_INDEX]].l1_dist.push(
+                Math.abs(Math.log10((100 - parseInt(res[i][L1_PERCENTILE_INDEX]))/100)));
             
-            datagroup[res[i][3]].rbps = [];
+            datagroup[res[i][BEG_EXON_INDEX]].rbps = [];
             var temp = [];
-            for(j = 0; j < 5; j++) {
-                temp[j] = res[i][9+j];
+            for(j = 0; j < NUMBER_OF_RBPS; j++) {
+                temp[j] = res[i][RBPS_INDEX + j];
             }
-            datagroup[res[i][3]].rbps.push(temp);
+            datagroup[res[i][BEG_EXON_INDEX]].rbps.push(temp);
         }
         data[i] = {};
-        data[i].chr1 = res[i][0];
-        data[i].mut_pos = res[i][1];
-        data[i].chr2 = res[i][2];
-        data[i].beg_exon = res[i][3];
-        data[i].end_exon = res[i][4];
-        data[i].gene = res[i][5];
-        data[i].strand = res[i][6];
-        data[i].terminal = res[i][7];
-        data[i].l1_dist = Math.abs(Math.log10((100 - res[i][8])/100));
+        data[i].chr1 = res[i][CHR1_INDEX];
+        data[i].mut_pos = res[i][MUT_POS_INDEX];
+        data[i].chr2 = res[i][CHR2_INDEX];
+        data[i].beg_exon = res[i][BEG_EXON_INDEX];
+        data[i].end_exon = res[i][END_EXON_INDEX];
+        data[i].gene = res[i][GENE_INDEX];
+        data[i].strand = res[i][STRAND_INDEX];
+        data[i].terminal = res[i][TERMINAL_INDEX];
+        data[i].l1_dist = 
+            Math.abs(Math.log10((100 - res[i][L1_PERCENTILE_INDEX])/100));
         data[i].rbps = [];
-        for(j = 0; j < 5; j++) {
-            data[i].rbps[j] = res[i][9+j];
+        for(j = 0; j < NUMBER_OF_RBPS; j++) {
+            data[i].rbps[j] = res[i][RBPS_INDEX + j];
 	}
         
     }
@@ -227,33 +255,46 @@ function drawVisualization(){
 $data = Session::get('message');
 ?>
 	mutationData = <?php echo json_encode($data)?>;
+    console.log(mutationData);
     if(mutationData == null) {
-        $("#visBody").html('<h2 style="color:#2C2C2C; text-align:center;">No Data to Display</h2>');
+        $("#visBody").html(
+            '<h2 style="color:#2C2C2C; text-align:center;">No Data to Display</h2>');
         return;
     }
     mutationDataGroup = parseSpliceString(mutationData, true);
-    
+    console.log(mutationDataGroup);
     mutationData = parseSpliceString(mutationData, false);
+    console.log(mutationData);
     var relDists = [];
     var chartData = [];
     
     //test grouping
 if(true){
+    EXON_TYPE = 0;
+    OTHER_TYPE = 1;
+    INTRON_TERMINAL3_TYPE = 2;
+    INTRON_TERMINAL5_TYPE = 3;
+
     for(var exon in mutationDataGroup) {
         if(!mutationDataGroup.hasOwnProperty(exon)) {continue;}
         else {
             var type = 0;
-            if(mutationDataGroup[exon].terminal[0]=="exon_internal"||mutationDataGroup[exon].terminal[0]=="exon_terminal") {
-                type = 0;
-	        mutationDataGroup[exon].isExon = true;
+            if (mutationDataGroup[exon].terminal[0]=="exon_internal" 
+                || mutationDataGroup[exon].terminal[0]=="exon_terminal") {
+                type = EXON_TYPE;
+                mutationDataGroup[exon].isExon = true;
             } else {
-                if(mutationDataGroup[exon].terminal[0]=="intron_terminal3"){type = 2;}
-                else if(mutationDataGroup[exon].terminal[0]=="intron_terminal5"){type = 3;}
-                else{type = 1;}
+                if (mutationDataGroup[exon].terminal[0]=="intron_terminal3") {
+                    type = INTRON_TERMINAL3_TYPE;
+                } else if(mutationDataGroup[exon].terminal[0]=="intron_terminal5") {
+                    type = INTRON_TERMINAL5_TYPE;
+                } else {
+                    type = OTHER_TYPE;
+                }
 
                 mutationDataGroup[exon].isExon = false;
             }
-	    for(var i = 0; i < mutationDataGroup[exon].l1_dist.length; i++) {
+	    for (var i = 0; i < mutationDataGroup[exon].l1_dist.length; i++) {
                 mut_pos = parseInt(mutationDataGroup[exon].mut_pos[i]);
                 beg_exon = parseInt(mutationDataGroup[exon].beg_exon);
                 end_exon = parseInt(mutationDataGroup[exon].end_exon);
@@ -262,51 +303,65 @@ if(true){
                 var d1 = mut_pos - beg_exon;
                 var d2 = end_exon - mut_pos;
                 var d3 = end_exon - beg_exon;
-                if(mutationDataGroup[exon].strand[i] == "+"){
-                    
-                    if(type == 0) {
-                        ss5 = d1<d2;
-                        ssdist = (ss5?d1:d2);
-                    } else if(type == 1) {
-                        ss5 = d1<d2;
-                        ssdist = (ss5?d1:d2);
-                    } else if(type == 2){
-                        ssdist = (end_exon - mut_pos);
-                        ss5 = false;
-                    } else if(type == 3) {
-                        ssdist = mut_pos - beg_exon;
-                        ss5 = true;
+                if (mutationDataGroup[exon].strand[i] == "+") {
+                    switch (type) {
+                        case EXON_TYPE:
+                            ss5 = d2 < d1;
+                            ssdist = Math.min(d1, d2);
+                            break;
+                        case OTHER_TYPE:
+                            ss5 = d1 < d2;
+                            ssdist = Math.min(d1, d2);
+                            break;
+                        case INTRON_TERMINAL3_TYPE:
+                            ssdist = d2;
+                            ss5 = false;
+                            break;
+                        case INTRON_TERMINAL5_TYPE:
+                            ssdist = d1;
+                            ss5 = true;
+                            break;
                     }
                 } else {
-                    if(type == 0) {
-                        ss5 = d2<d1;
-                        ssdist = (ss5?d2:d1);
-                    } else if(type == 1) {
-                        ss5 = d2<d1;
-                        ssdist = (ss5?d2:d1);
-                    } else if(type == 2){
-                        ssdist = mut_pos - beg_exon;
-                        ss5 = true;
-                    } else if(type == 3) {
-                        ssdist = end_exon - mut_pos;
-                        ss5 = false;
-                    }                   
+                    switch (type) {
+                        case EXON_TYPE:
+                            ss5 = d1 < d2;
+                            ssdist = Math.min(d1, d2);
+                            break;
+                        case OTHER_TYPE:
+                            ss5 = d2 < d1;
+                            ssdist = Math.min(d1, d2);
+                            break;
+                        case INTRON_TERMINAL3_TYPE:
+                            ssdist = d1;
+                            ss5 = true;
+                            break;
+                        case INTRON_TERMINAL5_TYPE:
+                            ssdist = d2;
+                            ss5 = false;
+                            break;
+                    }                 
                 }
-                relDist = (type == 0?(ss5?1-ssdist/d3:ssdist/d3):(ss5?ssdist/d3:1-ssdist/d3));
+                relDist = (type == 0?
+                    (ss5?1-ssdist/d3:ssdist/d3):(ss5?ssdist/d3:1-ssdist/d3));
                 if(mutationDataGroup[exon].hasOwnProperty("relDist")) {
                     mutationDataGroup[exon].ssdist.push(ssdist);
                     mutationDataGroup[exon].relDist.push(relDist);
                     mutationDataGroup[exon].ss5.push(ss5);
-                    mutationDataGroup[exon].label.push(mutationDataGroup[exon].chr1+": "+ mut_pos  +", " + ssdist + "nt from " + (ss5?"5'SS":"3'SS"));
+                    mutationDataGroup[exon].label.push(
+                        mutationDataGroup[exon].chr1 + ": " + mut_pos  + ", "
+                         + ssdist + "nt from " + (ss5?"5'SS":"3'SS"));
                 }else {
                     mutationDataGroup[exon].relDist = [];
                     mutationDataGroup[exon].relDist.push(relDist);
                     mutationDataGroup[exon].ssdist = [];
-		    mutationDataGroup[exon].ssdist.push(ssdist);
+                    mutationDataGroup[exon].ssdist.push(ssdist);
                     mutationDataGroup[exon].ss5 = [];
                     mutationDataGroup[exon].ss5.push(ss5);
                     mutationDataGroup[exon].label = [];
-                    mutationDataGroup[exon].label.push(mutationDataGroup[exon].chr1+": "+ mut_pos  +", " + ssdist + "nt from " + (ss5?"5'SS":"3'SS"));
+                    mutationDataGroup[exon].label.push(
+                        mutationDataGroup[exon].chr1+ ": " + mut_pos  + ", "
+                         + ssdist + "nt from " + (ss5?"5'SS":"3'SS"));
                 }
             }
         }
@@ -397,7 +452,12 @@ function addText(center,vertical,text,canvas,size){
             }
 	    canvas.text(start + .5 * (end-start), vertical - 30, text).attr("fill", "#2c2c2c").attr("font-size", 15).attr("font-weight", 700).attr('font-family', 'inherit');
             return temp;
+
+
         }
+
+       // <div onMouseOver="show('div1')" on MouseOut= "hide('div1')">
+
         function addSplice(start,end,vertical,height,width,canvas, down){
             var animatePath = function(path, duration, attributes) {
                 if (!duration) duration = 1500;

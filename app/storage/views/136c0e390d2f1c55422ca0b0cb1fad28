@@ -18,7 +18,7 @@
     
     body{
       /*background: url("img/stardust.png");*/
-        background: #fcfcfc;
+  background: #fcfcfc;
     }
 
     .centered-form .panel{

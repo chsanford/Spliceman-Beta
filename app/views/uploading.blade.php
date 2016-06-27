@@ -32,33 +32,43 @@
         {{ Form::open(['files'=>true]) }}
 
           <div class="form-group">
-          {{ Form::textarea('sequence', null, array('class'=>'form-control input-sm','placeholder'=>'[chr variant_position(1-based) reference_allele alternative_allele] space separated; for example:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; chr20&nbsp;2301308&nbsp;T&nbsp;G','size' => '30x5')) }}
+          {{ Form::textarea('sequence', null, array(
+            'class'=>'form-control input-sm',
+            'placeholder'=>'[chr variant_position(1-based) reference_allele alternative_allele] space separated; for example:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; chr20&nbsp;2301308&nbsp;T&nbsp;G',
+            'size' => '30x5')) }}
           </div>
 
           <div class="form-group">
             {{ Form::file('file', null, array('class'=>'btn btn-info btn-block','placeholder'=>'Choose File')) }}
           </div>
 
+          <div class="form-group">
+            {{ Form::checkbox('output', 'visualization') }}
+            View Visualization of Results
+          </div>
+
           <div class="row">
             <div class="col-xs-6 col-sm-6 col-md-6">
-            <input type="submit" name="process" value="Process Sequences" class="btn btn-info btn-block">
-
+              <input type="submit" name="process_sample_text" value="Load Sample Data" class="btn btn-info btn-block">
               <!-- {{ Form::submit('Process Sequences', array('class'=>'btn btn-info btn-block')) }} -->
             </div>
             <div class="col-xs-6 col-sm-6 col-md-6">
-            <input type="submit" name="reset" value="Reset Values" class="btn btn-info btn-block">
+              <input type="submit" name="reset" value="Reset Values" class="btn btn-info btn-block">
               <!-- {{ Form::reset('Reset Values', array('class'=>'btn btn-info btn-block')) }} -->
             </div>
-            </div>
-            <br></br>
-            <div class="form-group">
-            <input type="submit" name="recommend" value="Recommend variants for submission" class="btn btn-info btn-block">
-          <!-- {{ Form::submit('Recommend variants for submission', array('class'=>'btn btn-info btn-block'))}} -->
           </div>
-          <br></br>
+          <br>
           <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
-            <input type="submit" name="process_sample_text" value="Load Sample Data" class="btn btn-info btn-block">
+              <input type="submit" name="recommend" value="Recommend variants for submission" class="btn btn-info btn-block">
+          <!-- {{ Form::submit('Recommend variants for submission', array('class'=>'btn btn-info btn-block'))}} -->
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+            
+            <input type="submit" name="process" value="Process Sequences" class="btn btn-info btn-block">
 
               <!-- {{ Form::submit('Process Sequences', array('class'=>'btn btn-info btn-block')) }} -->
             </div>
