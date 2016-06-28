@@ -6508,3 +6508,704 @@ Stack trace:
 #13 /var/www/html/spliceman_beta/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
 #14 /var/www/html/spliceman_beta/public/index.php(49): Illuminate\Foundation\Application->run()
 #15 {main} [] []
+[2016-06-27 17:36:27] production.ERROR: exception 'ErrorException' with message 'Use of undefined constant path_final_processing_final - assumed 'path_final_processing_final'' in /var/www/html/spliceman_beta/app/routes.php:254
+Stack trace:
+#0 /var/www/html/spliceman_beta/app/routes.php(254): Illuminate\Exception\Handler->handleError(8, 'Use of undefine...', '/var/www/html/s...', 254, Array)
+#1 /var/www/html/spliceman_beta/app/routes.php(401): splicemanPipeline('chr20?2300608?....', false)
+#2 [internal function]: {closure}()
+#3 /var/www/html/spliceman_beta/bootstrap/compiled.php(5340): call_user_func_array(Object(Closure), Array)
+#4 /var/www/html/spliceman_beta/bootstrap/compiled.php(5007): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#5 /var/www/html/spliceman_beta/bootstrap/compiled.php(4995): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#6 /var/www/html/spliceman_beta/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#7 /var/www/html/spliceman_beta/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#8 /var/www/html/spliceman_beta/bootstrap/compiled.php(7758): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#9 /var/www/html/spliceman_beta/bootstrap/compiled.php(8365): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#10 /var/www/html/spliceman_beta/bootstrap/compiled.php(8312): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#11 /var/www/html/spliceman_beta/bootstrap/compiled.php(10974): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#12 /var/www/html/spliceman_beta/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#13 /var/www/html/spliceman_beta/public/index.php(49): Illuminate\Foundation\Application->run()
+#14 {main} [] []
+[2016-06-27 18:54:29] production.ERROR: exception 'ErrorException' with message 'Trying to get property of non-object' in /var/www/html/spliceman_beta/app/routes.php:86
+Stack trace:
+#0 /var/www/html/spliceman_beta/app/routes.php(86): Illuminate\Exception\Handler->handleError(8, 'Trying to get p...', '/var/www/html/s...', 86, Array)
+#1 /var/www/html/spliceman_beta/app/routes.php(431): splicemanPipeline('chr20?2300608?....', false)
+#2 [internal function]: {closure}()
+#3 /var/www/html/spliceman_beta/bootstrap/compiled.php(5340): call_user_func_array(Object(Closure), Array)
+#4 /var/www/html/spliceman_beta/bootstrap/compiled.php(5007): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#5 /var/www/html/spliceman_beta/bootstrap/compiled.php(4995): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#6 /var/www/html/spliceman_beta/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#7 /var/www/html/spliceman_beta/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#8 /var/www/html/spliceman_beta/bootstrap/compiled.php(7758): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#9 /var/www/html/spliceman_beta/bootstrap/compiled.php(8365): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#10 /var/www/html/spliceman_beta/bootstrap/compiled.php(8312): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#11 /var/www/html/spliceman_beta/bootstrap/compiled.php(10974): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#12 /var/www/html/spliceman_beta/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#13 /var/www/html/spliceman_beta/public/index.php(49): Illuminate\Foundation\Application->run()
+#14 {main} [] []
+[2016-06-27 19:11:04] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '['' in /var/www/html/spliceman_beta/app/routes.php:73
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2016-06-27 19:11:22] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '['' in /var/www/html/spliceman_beta/app/routes.php:73
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2016-06-27 19:11:38] production.ERROR: exception 'ErrorException' with message 'Undefined offset: 1' in /var/www/html/spliceman_beta/app/routes.php:73
+Stack trace:
+#0 /var/www/html/spliceman_beta/app/routes.php(73): Illuminate\Exception\Handler->handleError(8, 'Undefined offse...', '/var/www/html/s...', 73, Array)
+#1 /var/www/html/spliceman_beta/app/routes.php(443): splicemanPipeline('chr20?2300608?....', false)
+#2 [internal function]: {closure}()
+#3 /var/www/html/spliceman_beta/bootstrap/compiled.php(5340): call_user_func_array(Object(Closure), Array)
+#4 /var/www/html/spliceman_beta/bootstrap/compiled.php(5007): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#5 /var/www/html/spliceman_beta/bootstrap/compiled.php(4995): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#6 /var/www/html/spliceman_beta/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#7 /var/www/html/spliceman_beta/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#8 /var/www/html/spliceman_beta/bootstrap/compiled.php(7758): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#9 /var/www/html/spliceman_beta/bootstrap/compiled.php(8365): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#10 /var/www/html/spliceman_beta/bootstrap/compiled.php(8312): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#11 /var/www/html/spliceman_beta/bootstrap/compiled.php(10974): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#12 /var/www/html/spliceman_beta/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#13 /var/www/html/spliceman_beta/public/index.php(49): Illuminate\Foundation\Application->run()
+#14 {main} [] []
+[2016-06-27 19:14:04] production.ERROR: exception 'ErrorException' with message 'Undefined offset: 1' in /var/www/html/spliceman_beta/app/routes.php:73
+Stack trace:
+#0 /var/www/html/spliceman_beta/app/routes.php(73): Illuminate\Exception\Handler->handleError(8, 'Undefined offse...', '/var/www/html/s...', 73, Array)
+#1 /var/www/html/spliceman_beta/app/routes.php(443): splicemanPipeline('chr20?2300608?....', false)
+#2 [internal function]: {closure}()
+#3 /var/www/html/spliceman_beta/bootstrap/compiled.php(5340): call_user_func_array(Object(Closure), Array)
+#4 /var/www/html/spliceman_beta/bootstrap/compiled.php(5007): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#5 /var/www/html/spliceman_beta/bootstrap/compiled.php(4995): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#6 /var/www/html/spliceman_beta/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#7 /var/www/html/spliceman_beta/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#8 /var/www/html/spliceman_beta/bootstrap/compiled.php(7758): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#9 /var/www/html/spliceman_beta/bootstrap/compiled.php(8365): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#10 /var/www/html/spliceman_beta/bootstrap/compiled.php(8312): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#11 /var/www/html/spliceman_beta/bootstrap/compiled.php(10974): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#12 /var/www/html/spliceman_beta/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#13 /var/www/html/spliceman_beta/public/index.php(49): Illuminate\Foundation\Application->run()
+#14 {main} [] []
+[2016-06-27 19:14:31] production.ERROR: exception 'ErrorException' with message 'Undefined offset: 1' in /var/www/html/spliceman_beta/app/routes.php:73
+Stack trace:
+#0 /var/www/html/spliceman_beta/app/routes.php(73): Illuminate\Exception\Handler->handleError(8, 'Undefined offse...', '/var/www/html/s...', 73, Array)
+#1 /var/www/html/spliceman_beta/app/routes.php(443): splicemanPipeline('chr20?2300608?....', false)
+#2 [internal function]: {closure}()
+#3 /var/www/html/spliceman_beta/bootstrap/compiled.php(5340): call_user_func_array(Object(Closure), Array)
+#4 /var/www/html/spliceman_beta/bootstrap/compiled.php(5007): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#5 /var/www/html/spliceman_beta/bootstrap/compiled.php(4995): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#6 /var/www/html/spliceman_beta/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#7 /var/www/html/spliceman_beta/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#8 /var/www/html/spliceman_beta/bootstrap/compiled.php(7758): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#9 /var/www/html/spliceman_beta/bootstrap/compiled.php(8365): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#10 /var/www/html/spliceman_beta/bootstrap/compiled.php(8312): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#11 /var/www/html/spliceman_beta/bootstrap/compiled.php(10974): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#12 /var/www/html/spliceman_beta/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#13 /var/www/html/spliceman_beta/public/index.php(49): Illuminate\Foundation\Application->run()
+#14 {main} [] []
+[2016-06-27 19:16:25] production.ERROR: exception 'ErrorException' with message 'Undefined offset: 1' in /var/www/html/spliceman_beta/app/routes.php:74
+Stack trace:
+#0 /var/www/html/spliceman_beta/app/routes.php(74): Illuminate\Exception\Handler->handleError(8, 'Undefined offse...', '/var/www/html/s...', 74, Array)
+#1 /var/www/html/spliceman_beta/app/routes.php(444): splicemanPipeline('chr20?2300608?....', false)
+#2 [internal function]: {closure}()
+#3 /var/www/html/spliceman_beta/bootstrap/compiled.php(5340): call_user_func_array(Object(Closure), Array)
+#4 /var/www/html/spliceman_beta/bootstrap/compiled.php(5007): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#5 /var/www/html/spliceman_beta/bootstrap/compiled.php(4995): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#6 /var/www/html/spliceman_beta/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#7 /var/www/html/spliceman_beta/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#8 /var/www/html/spliceman_beta/bootstrap/compiled.php(7758): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#9 /var/www/html/spliceman_beta/bootstrap/compiled.php(8365): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#10 /var/www/html/spliceman_beta/bootstrap/compiled.php(8312): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#11 /var/www/html/spliceman_beta/bootstrap/compiled.php(10974): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#12 /var/www/html/spliceman_beta/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#13 /var/www/html/spliceman_beta/public/index.php(49): Illuminate\Foundation\Application->run()
+#14 {main} [] []
+[2016-06-27 19:34:41] production.ERROR: exception 'ErrorException' with message 'Trying to get property of non-object' in /var/www/html/spliceman_beta/app/routes.php:98
+Stack trace:
+#0 /var/www/html/spliceman_beta/app/routes.php(98): Illuminate\Exception\Handler->handleError(8, 'Trying to get p...', '/var/www/html/s...', 98, Array)
+#1 /var/www/html/spliceman_beta/app/routes.php(454): splicemanPipeline('chr20?2300608?....', false)
+#2 [internal function]: {closure}()
+#3 /var/www/html/spliceman_beta/bootstrap/compiled.php(5340): call_user_func_array(Object(Closure), Array)
+#4 /var/www/html/spliceman_beta/bootstrap/compiled.php(5007): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#5 /var/www/html/spliceman_beta/bootstrap/compiled.php(4995): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#6 /var/www/html/spliceman_beta/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#7 /var/www/html/spliceman_beta/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#8 /var/www/html/spliceman_beta/bootstrap/compiled.php(7758): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#9 /var/www/html/spliceman_beta/bootstrap/compiled.php(8365): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#10 /var/www/html/spliceman_beta/bootstrap/compiled.php(8312): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#11 /var/www/html/spliceman_beta/bootstrap/compiled.php(10974): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#12 /var/www/html/spliceman_beta/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#13 /var/www/html/spliceman_beta/public/index.php(49): Illuminate\Foundation\Application->run()
+#14 {main} [] []
+[2016-06-27 19:39:04] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected 'WHERE' (T_STRING)' in /var/www/html/spliceman_beta/app/routes.php:96
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2016-06-27 19:39:22] production.ERROR: exception 'ErrorException' with message 'Trying to get property of non-object' in /var/www/html/spliceman_beta/app/routes.php:98
+Stack trace:
+#0 /var/www/html/spliceman_beta/app/routes.php(98): Illuminate\Exception\Handler->handleError(8, 'Trying to get p...', '/var/www/html/s...', 98, Array)
+#1 /var/www/html/spliceman_beta/app/routes.php(447): splicemanPipeline('chr20?2300608?....', false)
+#2 [internal function]: {closure}()
+#3 /var/www/html/spliceman_beta/bootstrap/compiled.php(5340): call_user_func_array(Object(Closure), Array)
+#4 /var/www/html/spliceman_beta/bootstrap/compiled.php(5007): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#5 /var/www/html/spliceman_beta/bootstrap/compiled.php(4995): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#6 /var/www/html/spliceman_beta/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#7 /var/www/html/spliceman_beta/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#8 /var/www/html/spliceman_beta/bootstrap/compiled.php(7758): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#9 /var/www/html/spliceman_beta/bootstrap/compiled.php(8365): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#10 /var/www/html/spliceman_beta/bootstrap/compiled.php(8312): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#11 /var/www/html/spliceman_beta/bootstrap/compiled.php(10974): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#12 /var/www/html/spliceman_beta/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#13 /var/www/html/spliceman_beta/public/index.php(49): Illuminate\Foundation\Application->run()
+#14 {main} [] []
+[2016-06-27 19:40:50] production.ERROR: exception 'UnexpectedValueException' with message 'The Response content must be a string or object implementing __toString(), "boolean" given.' in /var/www/html/spliceman_beta/bootstrap/compiled.php:9997
+Stack trace:
+#0 /var/www/html/spliceman_beta/bootstrap/compiled.php(10372): Symfony\Component\HttpFoundation\Response->setContent(false)
+#1 /var/www/html/spliceman_beta/bootstrap/compiled.php(9900): Illuminate\Http\Response->setContent(false)
+#2 /var/www/html/spliceman_beta/bootstrap/compiled.php(5200): Symfony\Component\HttpFoundation\Response->__construct(false)
+#3 /var/www/html/spliceman_beta/bootstrap/compiled.php(5009): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), false)
+#4 /var/www/html/spliceman_beta/bootstrap/compiled.php(4995): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#5 /var/www/html/spliceman_beta/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#6 /var/www/html/spliceman_beta/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#7 /var/www/html/spliceman_beta/bootstrap/compiled.php(7758): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#8 /var/www/html/spliceman_beta/bootstrap/compiled.php(8365): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#9 /var/www/html/spliceman_beta/bootstrap/compiled.php(8312): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#10 /var/www/html/spliceman_beta/bootstrap/compiled.php(10974): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#11 /var/www/html/spliceman_beta/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#12 /var/www/html/spliceman_beta/public/index.php(49): Illuminate\Foundation\Application->run()
+#13 {main} [] []
+[2016-06-27 19:49:15] production.ERROR: exception 'UnexpectedValueException' with message 'The Response content must be a string or object implementing __toString(), "object" given.' in /var/www/html/spliceman_beta/bootstrap/compiled.php:9997
+Stack trace:
+#0 /var/www/html/spliceman_beta/bootstrap/compiled.php(10372): Symfony\Component\HttpFoundation\Response->setContent(Object(mysqli_result))
+#1 /var/www/html/spliceman_beta/bootstrap/compiled.php(9900): Illuminate\Http\Response->setContent(Object(mysqli_result))
+#2 /var/www/html/spliceman_beta/bootstrap/compiled.php(5200): Symfony\Component\HttpFoundation\Response->__construct(Object(mysqli_result))
+#3 /var/www/html/spliceman_beta/bootstrap/compiled.php(5009): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(mysqli_result))
+#4 /var/www/html/spliceman_beta/bootstrap/compiled.php(4995): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#5 /var/www/html/spliceman_beta/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#6 /var/www/html/spliceman_beta/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#7 /var/www/html/spliceman_beta/bootstrap/compiled.php(7758): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#8 /var/www/html/spliceman_beta/bootstrap/compiled.php(8365): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#9 /var/www/html/spliceman_beta/bootstrap/compiled.php(8312): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#10 /var/www/html/spliceman_beta/bootstrap/compiled.php(10974): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#11 /var/www/html/spliceman_beta/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#12 /var/www/html/spliceman_beta/public/index.php(49): Illuminate\Foundation\Application->run()
+#13 {main} [] []
+[2016-06-27 19:56:51] production.ERROR: exception 'ErrorException' with message 'Use of undefined constant i - assumed 'i'' in /var/www/html/spliceman_beta/app/routes.php:89
+Stack trace:
+#0 /var/www/html/spliceman_beta/app/routes.php(89): Illuminate\Exception\Handler->handleError(8, 'Use of undefine...', '/var/www/html/s...', 89, Array)
+#1 /var/www/html/spliceman_beta/app/routes.php(444): splicemanPipeline('chr20?2300608?....', false)
+#2 [internal function]: {closure}()
+#3 /var/www/html/spliceman_beta/bootstrap/compiled.php(5340): call_user_func_array(Object(Closure), Array)
+#4 /var/www/html/spliceman_beta/bootstrap/compiled.php(5007): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#5 /var/www/html/spliceman_beta/bootstrap/compiled.php(4995): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#6 /var/www/html/spliceman_beta/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#7 /var/www/html/spliceman_beta/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#8 /var/www/html/spliceman_beta/bootstrap/compiled.php(7758): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#9 /var/www/html/spliceman_beta/bootstrap/compiled.php(8365): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#10 /var/www/html/spliceman_beta/bootstrap/compiled.php(8312): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#11 /var/www/html/spliceman_beta/bootstrap/compiled.php(10974): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#12 /var/www/html/spliceman_beta/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#13 /var/www/html/spliceman_beta/public/index.php(49): Illuminate\Foundation\Application->run()
+#14 {main} [] []
+[2016-06-27 19:57:22] production.ERROR: exception 'ErrorException' with message 'join(): Invalid arguments passed' in /var/www/html/spliceman_beta/app/routes.php:108
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleError(2, 'join(): Invalid...', '/var/www/html/s...', 108, Array)
+#1 /var/www/html/spliceman_beta/app/routes.php(108): join('?chr20?2301308?...', ':')
+#2 /var/www/html/spliceman_beta/app/routes.php(443): splicemanPipeline('chr20?2300608?....', false)
+#3 [internal function]: {closure}()
+#4 /var/www/html/spliceman_beta/bootstrap/compiled.php(5340): call_user_func_array(Object(Closure), Array)
+#5 /var/www/html/spliceman_beta/bootstrap/compiled.php(5007): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#6 /var/www/html/spliceman_beta/bootstrap/compiled.php(4995): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#7 /var/www/html/spliceman_beta/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#8 /var/www/html/spliceman_beta/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#9 /var/www/html/spliceman_beta/bootstrap/compiled.php(7758): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#10 /var/www/html/spliceman_beta/bootstrap/compiled.php(8365): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#11 /var/www/html/spliceman_beta/bootstrap/compiled.php(8312): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#12 /var/www/html/spliceman_beta/bootstrap/compiled.php(10974): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#13 /var/www/html/spliceman_beta/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#14 /var/www/html/spliceman_beta/public/index.php(49): Illuminate\Foundation\Application->run()
+#15 {main} [] []
+[2016-06-27 19:57:41] production.ERROR: exception 'ErrorException' with message 'join(): Invalid arguments passed' in /var/www/html/spliceman_beta/app/routes.php:108
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleError(2, 'join(): Invalid...', '/var/www/html/s...', 108, Array)
+#1 /var/www/html/spliceman_beta/app/routes.php(108): join('?chr20?2301308?...', ':')
+#2 /var/www/html/spliceman_beta/app/routes.php(443): splicemanPipeline('chr20?2300608?....', true)
+#3 [internal function]: {closure}()
+#4 /var/www/html/spliceman_beta/bootstrap/compiled.php(5340): call_user_func_array(Object(Closure), Array)
+#5 /var/www/html/spliceman_beta/bootstrap/compiled.php(5007): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#6 /var/www/html/spliceman_beta/bootstrap/compiled.php(4995): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#7 /var/www/html/spliceman_beta/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#8 /var/www/html/spliceman_beta/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#9 /var/www/html/spliceman_beta/bootstrap/compiled.php(7758): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#10 /var/www/html/spliceman_beta/bootstrap/compiled.php(8365): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#11 /var/www/html/spliceman_beta/bootstrap/compiled.php(8312): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#12 /var/www/html/spliceman_beta/bootstrap/compiled.php(10974): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#13 /var/www/html/spliceman_beta/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#14 /var/www/html/spliceman_beta/public/index.php(49): Illuminate\Foundation\Application->run()
+#15 {main} [] []
+[2016-06-28 13:17:22] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '='' in /var/www/html/spliceman_beta/app/routes.php:82
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2016-06-28 13:43:47] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '='' in /var/www/html/spliceman_beta/app/routes.php:78
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2016-06-28 13:47:42] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '='' in /var/www/html/spliceman_beta/app/routes.php:78
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2016-06-28 13:48:17] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '='' in /var/www/html/spliceman_beta/app/routes.php:78
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2016-06-28 13:48:23] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '}'' in /var/www/html/spliceman_beta/app/routes.php:104
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2016-06-28 13:48:49] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '[', expecting ']'' in /var/www/html/spliceman_beta/app/routes.php:110
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2016-06-28 13:49:31] production.ERROR: exception 'ErrorException' with message 'Undefined offset: 0' in /var/www/html/spliceman_beta/app/routes.php:99
+Stack trace:
+#0 /var/www/html/spliceman_beta/app/routes.php(99): Illuminate\Exception\Handler->handleError(8, 'Undefined offse...', '/var/www/html/s...', 99, Array)
+#1 /var/www/html/spliceman_beta/app/routes.php(457): splicemanPipeline('chr20?2300608?....', false)
+#2 [internal function]: {closure}()
+#3 /var/www/html/spliceman_beta/bootstrap/compiled.php(5340): call_user_func_array(Object(Closure), Array)
+#4 /var/www/html/spliceman_beta/bootstrap/compiled.php(5007): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#5 /var/www/html/spliceman_beta/bootstrap/compiled.php(4995): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#6 /var/www/html/spliceman_beta/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#7 /var/www/html/spliceman_beta/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#8 /var/www/html/spliceman_beta/bootstrap/compiled.php(7758): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#9 /var/www/html/spliceman_beta/bootstrap/compiled.php(8365): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#10 /var/www/html/spliceman_beta/bootstrap/compiled.php(8312): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#11 /var/www/html/spliceman_beta/bootstrap/compiled.php(10974): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#12 /var/www/html/spliceman_beta/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#13 /var/www/html/spliceman_beta/public/index.php(49): Illuminate\Foundation\Application->run()
+#14 {main} [] []
+[2016-06-28 13:50:52] production.ERROR: exception 'ErrorException' with message 'Undefined offset: 7' in /var/www/html/spliceman_beta/app/routes.php:99
+Stack trace:
+#0 /var/www/html/spliceman_beta/app/routes.php(99): Illuminate\Exception\Handler->handleError(8, 'Undefined offse...', '/var/www/html/s...', 99, Array)
+#1 /var/www/html/spliceman_beta/app/routes.php(456): splicemanPipeline('chr20?2300608?....', false)
+#2 [internal function]: {closure}()
+#3 /var/www/html/spliceman_beta/bootstrap/compiled.php(5340): call_user_func_array(Object(Closure), Array)
+#4 /var/www/html/spliceman_beta/bootstrap/compiled.php(5007): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#5 /var/www/html/spliceman_beta/bootstrap/compiled.php(4995): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#6 /var/www/html/spliceman_beta/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#7 /var/www/html/spliceman_beta/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#8 /var/www/html/spliceman_beta/bootstrap/compiled.php(7758): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#9 /var/www/html/spliceman_beta/bootstrap/compiled.php(8365): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#10 /var/www/html/spliceman_beta/bootstrap/compiled.php(8312): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#11 /var/www/html/spliceman_beta/bootstrap/compiled.php(10974): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#12 /var/www/html/spliceman_beta/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#13 /var/www/html/spliceman_beta/public/index.php(49): Illuminate\Foundation\Application->run()
+#14 {main} [] []
+[2016-06-28 13:51:36] production.ERROR: exception 'ErrorException' with message 'Undefined offset: 7' in /var/www/html/spliceman_beta/app/routes.php:99
+Stack trace:
+#0 /var/www/html/spliceman_beta/app/routes.php(99): Illuminate\Exception\Handler->handleError(8, 'Undefined offse...', '/var/www/html/s...', 99, Array)
+#1 /var/www/html/spliceman_beta/app/routes.php(456): splicemanPipeline('chr20?2300608?....', false)
+#2 [internal function]: {closure}()
+#3 /var/www/html/spliceman_beta/bootstrap/compiled.php(5340): call_user_func_array(Object(Closure), Array)
+#4 /var/www/html/spliceman_beta/bootstrap/compiled.php(5007): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#5 /var/www/html/spliceman_beta/bootstrap/compiled.php(4995): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#6 /var/www/html/spliceman_beta/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#7 /var/www/html/spliceman_beta/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#8 /var/www/html/spliceman_beta/bootstrap/compiled.php(7758): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#9 /var/www/html/spliceman_beta/bootstrap/compiled.php(8365): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#10 /var/www/html/spliceman_beta/bootstrap/compiled.php(8312): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#11 /var/www/html/spliceman_beta/bootstrap/compiled.php(10974): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#12 /var/www/html/spliceman_beta/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#13 /var/www/html/spliceman_beta/public/index.php(49): Illuminate\Foundation\Application->run()
+#14 {main} [] []
+[2016-06-28 13:54:12] production.ERROR: exception 'ErrorException' with message 'explode() expects at least 2 parameters, 1 given' in /var/www/html/spliceman_beta/app/routes.php:99
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleError(2, 'explode() expec...', '/var/www/html/s...', 99, Array)
+#1 /var/www/html/spliceman_beta/app/routes.php(99): explode('_')
+#2 /var/www/html/spliceman_beta/app/routes.php(457): splicemanPipeline('chr20?2300608?....', false)
+#3 [internal function]: {closure}()
+#4 /var/www/html/spliceman_beta/bootstrap/compiled.php(5340): call_user_func_array(Object(Closure), Array)
+#5 /var/www/html/spliceman_beta/bootstrap/compiled.php(5007): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#6 /var/www/html/spliceman_beta/bootstrap/compiled.php(4995): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#7 /var/www/html/spliceman_beta/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#8 /var/www/html/spliceman_beta/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#9 /var/www/html/spliceman_beta/bootstrap/compiled.php(7758): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#10 /var/www/html/spliceman_beta/bootstrap/compiled.php(8365): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#11 /var/www/html/spliceman_beta/bootstrap/compiled.php(8312): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#12 /var/www/html/spliceman_beta/bootstrap/compiled.php(10974): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#13 /var/www/html/spliceman_beta/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#14 /var/www/html/spliceman_beta/public/index.php(49): Illuminate\Foundation\Application->run()
+#15 {main} [] []
+[2016-06-28 13:54:45] production.ERROR: exception 'ErrorException' with message 'Undefined offset: 1' in /var/www/html/spliceman_beta/app/routes.php:111
+Stack trace:
+#0 /var/www/html/spliceman_beta/app/routes.php(111): Illuminate\Exception\Handler->handleError(8, 'Undefined offse...', '/var/www/html/s...', 111, Array)
+#1 /var/www/html/spliceman_beta/app/routes.php(457): splicemanPipeline('chr20?2300608?....', false)
+#2 [internal function]: {closure}()
+#3 /var/www/html/spliceman_beta/bootstrap/compiled.php(5340): call_user_func_array(Object(Closure), Array)
+#4 /var/www/html/spliceman_beta/bootstrap/compiled.php(5007): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#5 /var/www/html/spliceman_beta/bootstrap/compiled.php(4995): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#6 /var/www/html/spliceman_beta/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#7 /var/www/html/spliceman_beta/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#8 /var/www/html/spliceman_beta/bootstrap/compiled.php(7758): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#9 /var/www/html/spliceman_beta/bootstrap/compiled.php(8365): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#10 /var/www/html/spliceman_beta/bootstrap/compiled.php(8312): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#11 /var/www/html/spliceman_beta/bootstrap/compiled.php(10974): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#12 /var/www/html/spliceman_beta/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#13 /var/www/html/spliceman_beta/public/index.php(49): Illuminate\Foundation\Application->run()
+#14 {main} [] []
+[2016-06-28 13:58:06] production.ERROR: exception 'ErrorException' with message 'Undefined offset: 5' in /var/www/html/spliceman_beta/app/routes.php:111
+Stack trace:
+#0 /var/www/html/spliceman_beta/app/routes.php(111): Illuminate\Exception\Handler->handleError(8, 'Undefined offse...', '/var/www/html/s...', 111, Array)
+#1 /var/www/html/spliceman_beta/app/routes.php(457): splicemanPipeline('chr20?2300608?....', false)
+#2 [internal function]: {closure}()
+#3 /var/www/html/spliceman_beta/bootstrap/compiled.php(5340): call_user_func_array(Object(Closure), Array)
+#4 /var/www/html/spliceman_beta/bootstrap/compiled.php(5007): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#5 /var/www/html/spliceman_beta/bootstrap/compiled.php(4995): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#6 /var/www/html/spliceman_beta/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#7 /var/www/html/spliceman_beta/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#8 /var/www/html/spliceman_beta/bootstrap/compiled.php(7758): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#9 /var/www/html/spliceman_beta/bootstrap/compiled.php(8365): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#10 /var/www/html/spliceman_beta/bootstrap/compiled.php(8312): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#11 /var/www/html/spliceman_beta/bootstrap/compiled.php(10974): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#12 /var/www/html/spliceman_beta/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#13 /var/www/html/spliceman_beta/public/index.php(49): Illuminate\Foundation\Application->run()
+#14 {main} [] []
+[2016-06-28 13:58:29] production.ERROR: exception 'ErrorException' with message 'Undefined offset: 5' in /var/www/html/spliceman_beta/app/routes.php:111
+Stack trace:
+#0 /var/www/html/spliceman_beta/app/routes.php(111): Illuminate\Exception\Handler->handleError(8, 'Undefined offse...', '/var/www/html/s...', 111, Array)
+#1 /var/www/html/spliceman_beta/app/routes.php(457): splicemanPipeline('chr20?2300608?....', false)
+#2 [internal function]: {closure}()
+#3 /var/www/html/spliceman_beta/bootstrap/compiled.php(5340): call_user_func_array(Object(Closure), Array)
+#4 /var/www/html/spliceman_beta/bootstrap/compiled.php(5007): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#5 /var/www/html/spliceman_beta/bootstrap/compiled.php(4995): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#6 /var/www/html/spliceman_beta/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#7 /var/www/html/spliceman_beta/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#8 /var/www/html/spliceman_beta/bootstrap/compiled.php(7758): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#9 /var/www/html/spliceman_beta/bootstrap/compiled.php(8365): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#10 /var/www/html/spliceman_beta/bootstrap/compiled.php(8312): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#11 /var/www/html/spliceman_beta/bootstrap/compiled.php(10974): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#12 /var/www/html/spliceman_beta/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#13 /var/www/html/spliceman_beta/public/index.php(49): Illuminate\Foundation\Application->run()
+#14 {main} [] []
+[2016-06-28 14:22:59] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ';'' in /var/www/html/spliceman_beta/app/routes.php:137
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2016-06-28 14:23:30] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ';'' in /var/www/html/spliceman_beta/app/routes.php:138
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2016-06-28 14:24:15] production.ERROR: exception 'InvalidArgumentException' with message 'View [results] not found.' in /var/www/html/spliceman_beta/bootstrap/compiled.php:9443
+Stack trace:
+#0 /var/www/html/spliceman_beta/bootstrap/compiled.php(9416): Illuminate\View\FileViewFinder->findInPaths('results', Array)
+#1 /var/www/html/spliceman_beta/vendor/laravel/framework/src/Illuminate/View/Factory.php(124): Illuminate\View\FileViewFinder->find('results')
+#2 /var/www/html/spliceman_beta/bootstrap/compiled.php(3247): Illuminate\View\Factory->make('results')
+#3 /var/www/html/spliceman_beta/app/routes.php(20): Illuminate\Support\Facades\Facade::__callStatic('make', Array)
+#4 /var/www/html/spliceman_beta/app/routes.php(20): Illuminate\Support\Facades\View::make('results')
+#5 [internal function]: {closure}()
+#6 /var/www/html/spliceman_beta/bootstrap/compiled.php(5340): call_user_func_array(Object(Closure), Array)
+#7 /var/www/html/spliceman_beta/bootstrap/compiled.php(5007): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#8 /var/www/html/spliceman_beta/bootstrap/compiled.php(4995): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#9 /var/www/html/spliceman_beta/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#10 /var/www/html/spliceman_beta/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#11 /var/www/html/spliceman_beta/bootstrap/compiled.php(7758): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#12 /var/www/html/spliceman_beta/bootstrap/compiled.php(8365): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#13 /var/www/html/spliceman_beta/bootstrap/compiled.php(8312): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#14 /var/www/html/spliceman_beta/bootstrap/compiled.php(10974): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#15 /var/www/html/spliceman_beta/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#16 /var/www/html/spliceman_beta/public/index.php(49): Illuminate\Foundation\Application->run()
+#17 {main} [] []
+[2016-06-28 14:35:56] production.ERROR: exception 'Symfony\Component\HttpFoundation\File\Exception\FileNotFoundException' with message 'The file "/var/www/html/spliceman_beta/public/uploads/UisEvlnJXT4x" does not exist' in /var/www/html/spliceman_beta/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/File/File.php:41
+Stack trace:
+#0 /var/www/html/spliceman_beta/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/BinaryFileResponse.php(90): Symfony\Component\HttpFoundation\File\File->__construct('/var/www/html/s...')
+#1 /var/www/html/spliceman_beta/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/BinaryFileResponse.php(49): Symfony\Component\HttpFoundation\BinaryFileResponse->setFile('/var/www/html/s...', 'attachment', false, true)
+#2 /var/www/html/spliceman_beta/vendor/laravel/framework/src/Illuminate/Support/Facades/Response.php(102): Symfony\Component\HttpFoundation\BinaryFileResponse->__construct('/var/www/html/s...', 200, Array, true, 'attachment')
+#3 /var/www/html/spliceman_beta/app/routes.php(378): Illuminate\Support\Facades\Response::download('/var/www/html/s...')
+#4 /var/www/html/spliceman_beta/app/routes.php(480): splicemanPipeline('chr20?2300608?....', false)
+#5 [internal function]: {closure}()
+#6 /var/www/html/spliceman_beta/bootstrap/compiled.php(5340): call_user_func_array(Object(Closure), Array)
+#7 /var/www/html/spliceman_beta/bootstrap/compiled.php(5007): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#8 /var/www/html/spliceman_beta/bootstrap/compiled.php(4995): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#9 /var/www/html/spliceman_beta/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#10 /var/www/html/spliceman_beta/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#11 /var/www/html/spliceman_beta/bootstrap/compiled.php(7758): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#12 /var/www/html/spliceman_beta/bootstrap/compiled.php(8365): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#13 /var/www/html/spliceman_beta/bootstrap/compiled.php(8312): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#14 /var/www/html/spliceman_beta/bootstrap/compiled.php(10974): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#15 /var/www/html/spliceman_beta/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#16 /var/www/html/spliceman_beta/public/index.php(49): Illuminate\Foundation\Application->run()
+#17 {main} [] []
+[2016-06-28 14:39:18] production.ERROR: exception 'ErrorException' with message 'shell_exec() expects exactly 1 parameter, 3 given' in /var/www/html/spliceman_beta/app/routes.php:363
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleError(2, 'shell_exec() ex...', '/var/www/html/s...', 363, Array)
+#1 /var/www/html/spliceman_beta/app/routes.php(363): shell_exec('cat?           ...', Array, 0)
+#2 /var/www/html/spliceman_beta/app/routes.php(480): splicemanPipeline('chr20?2300608?....', false)
+#3 [internal function]: {closure}()
+#4 /var/www/html/spliceman_beta/bootstrap/compiled.php(5340): call_user_func_array(Object(Closure), Array)
+#5 /var/www/html/spliceman_beta/bootstrap/compiled.php(5007): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#6 /var/www/html/spliceman_beta/bootstrap/compiled.php(4995): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#7 /var/www/html/spliceman_beta/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#8 /var/www/html/spliceman_beta/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#9 /var/www/html/spliceman_beta/bootstrap/compiled.php(7758): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#10 /var/www/html/spliceman_beta/bootstrap/compiled.php(8365): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#11 /var/www/html/spliceman_beta/bootstrap/compiled.php(8312): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#12 /var/www/html/spliceman_beta/bootstrap/compiled.php(10974): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#13 /var/www/html/spliceman_beta/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#14 /var/www/html/spliceman_beta/public/index.php(49): Illuminate\Foundation\Application->run()
+#15 {main} [] []
+[2016-06-28 14:58:29] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in /var/www/html/spliceman_beta/app/routes.php:137
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2016-06-28 14:58:41] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in /var/www/html/spliceman_beta/app/routes.php:137
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2016-06-28 15:02:44] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected 'else' (T_ELSE)' in /var/www/html/spliceman_beta/app/routes.php:393
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2016-06-28 15:14:47] production.ERROR: exception 'ErrorException' with message 'Undefined variable: path_download' in /var/www/html/spliceman_beta/app/routes.php:408
+Stack trace:
+#0 /var/www/html/spliceman_beta/app/routes.php(408): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', '/var/www/html/s...', 408, Array)
+#1 /var/www/html/spliceman_beta/app/routes.php(506): splicemanPipeline('chr20?2300608?....', false)
+#2 [internal function]: {closure}()
+#3 /var/www/html/spliceman_beta/bootstrap/compiled.php(5340): call_user_func_array(Object(Closure), Array)
+#4 /var/www/html/spliceman_beta/bootstrap/compiled.php(5007): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#5 /var/www/html/spliceman_beta/bootstrap/compiled.php(4995): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#6 /var/www/html/spliceman_beta/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#7 /var/www/html/spliceman_beta/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#8 /var/www/html/spliceman_beta/bootstrap/compiled.php(7758): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#9 /var/www/html/spliceman_beta/bootstrap/compiled.php(8365): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#10 /var/www/html/spliceman_beta/bootstrap/compiled.php(8312): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#11 /var/www/html/spliceman_beta/bootstrap/compiled.php(10974): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#12 /var/www/html/spliceman_beta/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#13 /var/www/html/spliceman_beta/public/index.php(49): Illuminate\Foundation\Application->run()
+#14 {main} [] []
+[2016-06-28 15:36:55] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected 'file_get_contents' (T_STRING)' in /var/www/html/spliceman_beta/app/routes.php:153
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2016-06-28 15:37:57] production.ERROR: exception 'ErrorException' with message 'file_get_contents(/var/www/html/spliceman_beta/public/uploads/0eZ687wRruuT): failed to open stream: No such file or directory' in /var/www/html/spliceman_beta/app/routes.php:153
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleError(2, 'file_get_conten...', '/var/www/html/s...', 153, Array)
+#1 /var/www/html/spliceman_beta/app/routes.php(153): file_get_contents('/var/www/html/s...')
+#2 /var/www/html/spliceman_beta/app/routes.php(527): splicemanPipeline('chr20?2300608?....', false)
+#3 [internal function]: {closure}()
+#4 /var/www/html/spliceman_beta/bootstrap/compiled.php(5340): call_user_func_array(Object(Closure), Array)
+#5 /var/www/html/spliceman_beta/bootstrap/compiled.php(5007): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#6 /var/www/html/spliceman_beta/bootstrap/compiled.php(4995): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#7 /var/www/html/spliceman_beta/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#8 /var/www/html/spliceman_beta/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#9 /var/www/html/spliceman_beta/bootstrap/compiled.php(7758): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#10 /var/www/html/spliceman_beta/bootstrap/compiled.php(8365): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#11 /var/www/html/spliceman_beta/bootstrap/compiled.php(8312): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#12 /var/www/html/spliceman_beta/bootstrap/compiled.php(10974): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#13 /var/www/html/spliceman_beta/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#14 /var/www/html/spliceman_beta/public/index.php(49): Illuminate\Foundation\Application->run()
+#15 {main} [] []
+[2016-06-28 15:40:00] production.ERROR: exception 'ErrorException' with message 'file_get_contents(/var/www/html/spliceman_beta/public/uploads/FCEuuXJ1Dcz8): failed to open stream: No such file or directory' in /var/www/html/spliceman_beta/app/routes.php:155
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleError(2, 'file_get_conten...', '/var/www/html/s...', 155, Array)
+#1 /var/www/html/spliceman_beta/app/routes.php(155): file_get_contents('/var/www/html/s...')
+#2 /var/www/html/spliceman_beta/app/routes.php(529): splicemanPipeline('chr20?2300608?....', false)
+#3 [internal function]: {closure}()
+#4 /var/www/html/spliceman_beta/bootstrap/compiled.php(5340): call_user_func_array(Object(Closure), Array)
+#5 /var/www/html/spliceman_beta/bootstrap/compiled.php(5007): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#6 /var/www/html/spliceman_beta/bootstrap/compiled.php(4995): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#7 /var/www/html/spliceman_beta/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#8 /var/www/html/spliceman_beta/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#9 /var/www/html/spliceman_beta/bootstrap/compiled.php(7758): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#10 /var/www/html/spliceman_beta/bootstrap/compiled.php(8365): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#11 /var/www/html/spliceman_beta/bootstrap/compiled.php(8312): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#12 /var/www/html/spliceman_beta/bootstrap/compiled.php(10974): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#13 /var/www/html/spliceman_beta/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#14 /var/www/html/spliceman_beta/public/index.php(49): Illuminate\Foundation\Application->run()
+#15 {main} [] []
+[2016-06-28 15:40:21] production.ERROR: exception 'ErrorException' with message 'file_get_contents(/var/www/html/spliceman_beta/public/uploads/T6om5WhFQuOl): failed to open stream: No such file or directory' in /var/www/html/spliceman_beta/app/routes.php:155
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleError(2, 'file_get_conten...', '/var/www/html/s...', 155, Array)
+#1 /var/www/html/spliceman_beta/app/routes.php(155): file_get_contents('/var/www/html/s...')
+#2 /var/www/html/spliceman_beta/app/routes.php(529): splicemanPipeline('chr20?2300608?....', false)
+#3 [internal function]: {closure}()
+#4 /var/www/html/spliceman_beta/bootstrap/compiled.php(5340): call_user_func_array(Object(Closure), Array)
+#5 /var/www/html/spliceman_beta/bootstrap/compiled.php(5007): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#6 /var/www/html/spliceman_beta/bootstrap/compiled.php(4995): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#7 /var/www/html/spliceman_beta/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#8 /var/www/html/spliceman_beta/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#9 /var/www/html/spliceman_beta/bootstrap/compiled.php(7758): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#10 /var/www/html/spliceman_beta/bootstrap/compiled.php(8365): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#11 /var/www/html/spliceman_beta/bootstrap/compiled.php(8312): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#12 /var/www/html/spliceman_beta/bootstrap/compiled.php(10974): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#13 /var/www/html/spliceman_beta/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#14 /var/www/html/spliceman_beta/public/index.php(49): Illuminate\Foundation\Application->run()
+#15 {main} [] []
+[2016-06-28 15:40:28] production.ERROR: exception 'ErrorException' with message 'file_get_contents(/var/www/html/spliceman_beta/public/uploads/ENuJURiPZEBV): failed to open stream: No such file or directory' in /var/www/html/spliceman_beta/app/routes.php:155
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleError(2, 'file_get_conten...', '/var/www/html/s...', 155, Array)
+#1 /var/www/html/spliceman_beta/app/routes.php(155): file_get_contents('/var/www/html/s...')
+#2 /var/www/html/spliceman_beta/app/routes.php(531): splicemanPipeline('chr20?2300608?....', false)
+#3 [internal function]: {closure}()
+#4 /var/www/html/spliceman_beta/bootstrap/compiled.php(5340): call_user_func_array(Object(Closure), Array)
+#5 /var/www/html/spliceman_beta/bootstrap/compiled.php(5007): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#6 /var/www/html/spliceman_beta/bootstrap/compiled.php(4995): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#7 /var/www/html/spliceman_beta/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#8 /var/www/html/spliceman_beta/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#9 /var/www/html/spliceman_beta/bootstrap/compiled.php(7758): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#10 /var/www/html/spliceman_beta/bootstrap/compiled.php(8365): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#11 /var/www/html/spliceman_beta/bootstrap/compiled.php(8312): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#12 /var/www/html/spliceman_beta/bootstrap/compiled.php(10974): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#13 /var/www/html/spliceman_beta/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#14 /var/www/html/spliceman_beta/public/index.php(49): Illuminate\Foundation\Application->run()
+#15 {main} [] []
+[2016-06-28 15:41:00] production.ERROR: exception 'ErrorException' with message 'file_get_contents(/var/www/html/spliceman_beta/public/uploads/yGospK71qCAH): failed to open stream: No such file or directory' in /var/www/html/spliceman_beta/app/routes.php:156
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleError(2, 'file_get_conten...', '/var/www/html/s...', 156, Array)
+#1 /var/www/html/spliceman_beta/app/routes.php(156): file_get_contents('/var/www/html/s...')
+#2 /var/www/html/spliceman_beta/app/routes.php(531): splicemanPipeline('chr20?2300608?....', false)
+#3 [internal function]: {closure}()
+#4 /var/www/html/spliceman_beta/bootstrap/compiled.php(5340): call_user_func_array(Object(Closure), Array)
+#5 /var/www/html/spliceman_beta/bootstrap/compiled.php(5007): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#6 /var/www/html/spliceman_beta/bootstrap/compiled.php(4995): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#7 /var/www/html/spliceman_beta/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#8 /var/www/html/spliceman_beta/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#9 /var/www/html/spliceman_beta/bootstrap/compiled.php(7758): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#10 /var/www/html/spliceman_beta/bootstrap/compiled.php(8365): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#11 /var/www/html/spliceman_beta/bootstrap/compiled.php(8312): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#12 /var/www/html/spliceman_beta/bootstrap/compiled.php(10974): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#13 /var/www/html/spliceman_beta/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#14 /var/www/html/spliceman_beta/public/index.php(49): Illuminate\Foundation\Application->run()
+#15 {main} [] []
+[2016-06-28 15:43:49] production.ERROR: exception 'ErrorException' with message 'file_get_contents(/var/www/html/spliceman_beta/public/uploads/GSvogWHA0E0J): failed to open stream: No such file or directory' in /var/www/html/spliceman_beta/app/routes.php:153
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleError(2, 'file_get_conten...', '/var/www/html/s...', 153, Array)
+#1 /var/www/html/spliceman_beta/app/routes.php(153): file_get_contents('/var/www/html/s...')
+#2 /var/www/html/spliceman_beta/app/routes.php(527): splicemanPipeline('chr20?2300608?....', false)
+#3 [internal function]: {closure}()
+#4 /var/www/html/spliceman_beta/bootstrap/compiled.php(5340): call_user_func_array(Object(Closure), Array)
+#5 /var/www/html/spliceman_beta/bootstrap/compiled.php(5007): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#6 /var/www/html/spliceman_beta/bootstrap/compiled.php(4995): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#7 /var/www/html/spliceman_beta/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#8 /var/www/html/spliceman_beta/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#9 /var/www/html/spliceman_beta/bootstrap/compiled.php(7758): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#10 /var/www/html/spliceman_beta/bootstrap/compiled.php(8365): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#11 /var/www/html/spliceman_beta/bootstrap/compiled.php(8312): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#12 /var/www/html/spliceman_beta/bootstrap/compiled.php(10974): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#13 /var/www/html/spliceman_beta/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#14 /var/www/html/spliceman_beta/public/index.php(49): Illuminate\Foundation\Application->run()
+#15 {main} [] []
+[2016-06-28 15:44:11] production.ERROR: exception 'ErrorException' with message 'file_get_contents(/var/www/html/spliceman_beta/public/uploads/QhKMKlneH8jF): failed to open stream: No such file or directory' in /var/www/html/spliceman_beta/app/routes.php:153
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleError(2, 'file_get_conten...', '/var/www/html/s...', 153, Array)
+#1 /var/www/html/spliceman_beta/app/routes.php(153): file_get_contents('/var/www/html/s...')
+#2 /var/www/html/spliceman_beta/app/routes.php(527): splicemanPipeline('chr20?2300608?....', false)
+#3 [internal function]: {closure}()
+#4 /var/www/html/spliceman_beta/bootstrap/compiled.php(5340): call_user_func_array(Object(Closure), Array)
+#5 /var/www/html/spliceman_beta/bootstrap/compiled.php(5007): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#6 /var/www/html/spliceman_beta/bootstrap/compiled.php(4995): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#7 /var/www/html/spliceman_beta/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#8 /var/www/html/spliceman_beta/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#9 /var/www/html/spliceman_beta/bootstrap/compiled.php(7758): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#10 /var/www/html/spliceman_beta/bootstrap/compiled.php(8365): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#11 /var/www/html/spliceman_beta/bootstrap/compiled.php(8312): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#12 /var/www/html/spliceman_beta/bootstrap/compiled.php(10974): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#13 /var/www/html/spliceman_beta/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#14 /var/www/html/spliceman_beta/public/index.php(49): Illuminate\Foundation\Application->run()
+#15 {main} [] []
+[2016-06-28 16:17:06] production.ERROR: exception 'ErrorException' with message 'file_get_contents(5vO5fQ3y5BEZ): failed to open stream: No such file or directory' in /var/www/html/spliceman_beta/app/routes.php:248
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleError(2, 'file_get_conten...', '/var/www/html/s...', 248, Array)
+#1 /var/www/html/spliceman_beta/app/routes.php(248): file_get_contents('5vO5fQ3y5BEZ')
+#2 /var/www/html/spliceman_beta/app/routes.php(523): splicemanPipeline('chr20?2300608?....', false)
+#3 [internal function]: {closure}()
+#4 /var/www/html/spliceman_beta/bootstrap/compiled.php(5340): call_user_func_array(Object(Closure), Array)
+#5 /var/www/html/spliceman_beta/bootstrap/compiled.php(5007): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#6 /var/www/html/spliceman_beta/bootstrap/compiled.php(4995): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#7 /var/www/html/spliceman_beta/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#8 /var/www/html/spliceman_beta/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#9 /var/www/html/spliceman_beta/bootstrap/compiled.php(7758): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#10 /var/www/html/spliceman_beta/bootstrap/compiled.php(8365): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#11 /var/www/html/spliceman_beta/bootstrap/compiled.php(8312): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#12 /var/www/html/spliceman_beta/bootstrap/compiled.php(10974): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#13 /var/www/html/spliceman_beta/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#14 /var/www/html/spliceman_beta/public/index.php(49): Illuminate\Foundation\Application->run()
+#15 {main} [] []
+[2016-06-28 16:20:48] production.ERROR: exception 'ErrorException' with message 'file_get_contents(/var/www/html/spliceman_beta/public/uploads/XMJYXtN9f9E2     /var/www/html/spliceman_beta/public/uploads/d4FpBEZrOLYN): failed to open stream: No such file or directory' in /var/www/html/spliceman_beta/app/routes.php:309
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleError(2, 'file_get_conten...', '/var/www/html/s...', 309, Array)
+#1 /var/www/html/spliceman_beta/app/routes.php(309): file_get_contents('/var/www/html/s...')
+#2 /var/www/html/spliceman_beta/app/routes.php(522): splicemanPipeline('chr20?2300608?....', false)
+#3 [internal function]: {closure}()
+#4 /var/www/html/spliceman_beta/bootstrap/compiled.php(5340): call_user_func_array(Object(Closure), Array)
+#5 /var/www/html/spliceman_beta/bootstrap/compiled.php(5007): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#6 /var/www/html/spliceman_beta/bootstrap/compiled.php(4995): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#7 /var/www/html/spliceman_beta/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#8 /var/www/html/spliceman_beta/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#9 /var/www/html/spliceman_beta/bootstrap/compiled.php(7758): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#10 /var/www/html/spliceman_beta/bootstrap/compiled.php(8365): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#11 /var/www/html/spliceman_beta/bootstrap/compiled.php(8312): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#12 /var/www/html/spliceman_beta/bootstrap/compiled.php(10974): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#13 /var/www/html/spliceman_beta/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#14 /var/www/html/spliceman_beta/public/index.php(49): Illuminate\Foundation\Application->run()
+#15 {main} [] []
+[2016-06-28 16:50:51] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '$conn' (T_VARIABLE)' in /var/www/html/spliceman_beta/app/routes.php:394
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2016-06-28 16:51:18] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected 'if' (T_IF)' in /var/www/html/spliceman_beta/app/routes.php:411
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2016-06-28 17:18:28] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '$conn' (T_VARIABLE)' in /var/www/html/spliceman_beta/app/routes.php:394
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2016-06-28 17:40:15] production.ERROR: exception 'ErrorException' with message 'Use of undefined constant siisssisds - assumed 'siisssisds'' in /var/www/html/spliceman_beta/app/routes.php:399
+Stack trace:
+#0 /var/www/html/spliceman_beta/app/routes.php(399): Illuminate\Exception\Handler->handleError(8, 'Use of undefine...', '/var/www/html/s...', 399, Array)
+#1 /var/www/html/spliceman_beta/app/routes.php(544): splicemanPipeline('chr20?2300608?....', false)
+#2 [internal function]: {closure}()
+#3 /var/www/html/spliceman_beta/bootstrap/compiled.php(5340): call_user_func_array(Object(Closure), Array)
+#4 /var/www/html/spliceman_beta/bootstrap/compiled.php(5007): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#5 /var/www/html/spliceman_beta/bootstrap/compiled.php(4995): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#6 /var/www/html/spliceman_beta/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#7 /var/www/html/spliceman_beta/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#8 /var/www/html/spliceman_beta/bootstrap/compiled.php(7758): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#9 /var/www/html/spliceman_beta/bootstrap/compiled.php(8365): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#10 /var/www/html/spliceman_beta/bootstrap/compiled.php(8312): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#11 /var/www/html/spliceman_beta/bootstrap/compiled.php(10974): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#12 /var/www/html/spliceman_beta/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#13 /var/www/html/spliceman_beta/public/index.php(49): Illuminate\Foundation\Application->run()
+#14 {main} [] []
+[2016-06-28 17:40:38] production.ERROR: exception 'ErrorException' with message 'Undefined offset: 17' in /var/www/html/spliceman_beta/app/routes.php:415
+Stack trace:
+#0 /var/www/html/spliceman_beta/app/routes.php(415): Illuminate\Exception\Handler->handleError(8, 'Undefined offse...', '/var/www/html/s...', 415, Array)
+#1 /var/www/html/spliceman_beta/app/routes.php(544): splicemanPipeline('chr20?2300608?....', false)
+#2 [internal function]: {closure}()
+#3 /var/www/html/spliceman_beta/bootstrap/compiled.php(5340): call_user_func_array(Object(Closure), Array)
+#4 /var/www/html/spliceman_beta/bootstrap/compiled.php(5007): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#5 /var/www/html/spliceman_beta/bootstrap/compiled.php(4995): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#6 /var/www/html/spliceman_beta/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#7 /var/www/html/spliceman_beta/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#8 /var/www/html/spliceman_beta/bootstrap/compiled.php(7758): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#9 /var/www/html/spliceman_beta/bootstrap/compiled.php(8365): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#10 /var/www/html/spliceman_beta/bootstrap/compiled.php(8312): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#11 /var/www/html/spliceman_beta/bootstrap/compiled.php(10974): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#12 /var/www/html/spliceman_beta/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#13 /var/www/html/spliceman_beta/public/index.php(49): Illuminate\Foundation\Application->run()
+#14 {main} [] []
+[2016-06-28 17:42:14] production.ERROR: exception 'ErrorException' with message 'Undefined offset: 16' in /var/www/html/spliceman_beta/app/routes.php:415
+Stack trace:
+#0 /var/www/html/spliceman_beta/app/routes.php(415): Illuminate\Exception\Handler->handleError(8, 'Undefined offse...', '/var/www/html/s...', 415, Array)
+#1 /var/www/html/spliceman_beta/app/routes.php(545): splicemanPipeline('chr20?2300608?....', false)
+#2 [internal function]: {closure}()
+#3 /var/www/html/spliceman_beta/bootstrap/compiled.php(5340): call_user_func_array(Object(Closure), Array)
+#4 /var/www/html/spliceman_beta/bootstrap/compiled.php(5007): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#5 /var/www/html/spliceman_beta/bootstrap/compiled.php(4995): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#6 /var/www/html/spliceman_beta/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#7 /var/www/html/spliceman_beta/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#8 /var/www/html/spliceman_beta/bootstrap/compiled.php(7758): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#9 /var/www/html/spliceman_beta/bootstrap/compiled.php(8365): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#10 /var/www/html/spliceman_beta/bootstrap/compiled.php(8312): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#11 /var/www/html/spliceman_beta/bootstrap/compiled.php(10974): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#12 /var/www/html/spliceman_beta/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#13 /var/www/html/spliceman_beta/public/index.php(49): Illuminate\Foundation\Application->run()
+#14 {main} [] []

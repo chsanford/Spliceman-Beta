@@ -58,10 +58,8 @@ function drawChartGroup(dataGroup) {
     var name = dataGroup.label;
     var data = dataGroup.l1_dist;
     var items = [];
-    if(dataGroup.l1_dist >= 1.3)
-        {var barColor = "#39b3d7";}
-    else
-        {var barColor = "#e96d63";}
+if (data >= '1.3') {var barColor = "#e96d63";}
+    else {var barColor = "#39b3d7";}
     data.sort(function(a,b){
         var i1 = data.indexOf(a);
         var i2 = data.indexOf(b);
@@ -148,7 +146,8 @@ function populateTableGroup(dataGroup){
     table.append(headrow);
     for(var i = 0; i < dataGroup.rbps.length; i++) {
         var newrow = $("<tr class=rbp-row></tr>");
-        newrow.append("<th>"+dataGroup.mut_pos[i]+"</th>");
+        newrow.append("<th>" + dataGroup.mut_pos[i] + ": " + 
+            dataGroup.wild_base[i] + " \u2192 " + dataGroup.mut_base[i] + "</th>");
         for(var j = 0; j < dataGroup.rbps[i].length; j++) {
             newrow.append("<td>"+dataGroup.rbps[i][j]+"</td>");
         }
@@ -161,13 +160,15 @@ function parseSpliceString(data,ret){
     CHR1_INDEX = 0;
     MUT_POS_INDEX = 1;
     CHR2_INDEX = 2;
-    BEG_EXON_INDEX = 3;
-    END_EXON_INDEX = 4;
-    GENE_INDEX = 5;
-    STRAND_INDEX = 6;
-    TERMINAL_INDEX = 7;
-    L1_PERCENTILE_INDEX = 9;
-    RBPS_INDEX = 10;
+    WILD_BASE_INDEX = 3;
+    MUT_BASE_INDEX = 4;
+    BEG_EXON_INDEX = 5;
+    END_EXON_INDEX = 6;
+    GENE_INDEX = 7;
+    STRAND_INDEX = 8;
+    TERMINAL_INDEX = 9;
+    L1_PERCENTILE_INDEX = 10;
+    RBPS_INDEX = 11;
 
     NUMBER_OF_RBPS = 5;
 
@@ -181,7 +182,7 @@ function parseSpliceString(data,ret){
     var data = [];
     var datagroup = {};
     for(i = 0; i < res.length; i++) {
-        if(datagroup.hasOwnProperty(res[i][BEG_EXON_INDEX])) {
+        if (datagroup.hasOwnProperty(res[i][BEG_EXON_INDEX])) {
             datagroup[res[i][BEG_EXON_INDEX]].mut_pos.push(
                 res[i][MUT_POS_INDEX]);
             datagroup[res[i][BEG_EXON_INDEX]].strand.push(
@@ -190,6 +191,10 @@ function parseSpliceString(data,ret){
                 res[i][TERMINAL_INDEX]);
             datagroup[res[i][BEG_EXON_INDEX]].l1_dist.push(
                 Math.abs(Math.log10((100 - parseInt(res[i][L1_PERCENTILE_INDEX]))/100)));
+            datagroup[res[i][BEG_EXON_INDEX]].wild_base.push(
+                res[i][WILD_BASE_INDEX]);
+            datagroup[res[i][BEG_EXON_INDEX]].mut_base.push(
+                res[i][MUT_BASE_INDEX]);
             var temp = [];
             for(j = 0; j < 5; j++) {
                 temp[j] = res[i][RBPS_INDEX + j];
@@ -202,6 +207,10 @@ function parseSpliceString(data,ret){
             datagroup[res[i][BEG_EXON_INDEX]].mut_pos.push(
                 res[i][MUT_POS_INDEX]);
             datagroup[res[i][BEG_EXON_INDEX]].chr2 = res[i][CHR2_INDEX];
+            datagroup[res[i][BEG_EXON_INDEX]].wild_base = [];
+            datagroup[res[i][BEG_EXON_INDEX]].wild_base.push(res[i][WILD_BASE_INDEX]);
+            datagroup[res[i][BEG_EXON_INDEX]].mut_base = [];
+            datagroup[res[i][BEG_EXON_INDEX]].mut_base.push(res[i][MUT_BASE_INDEX]);
             datagroup[res[i][BEG_EXON_INDEX]].beg_exon = res[i][BEG_EXON_INDEX];
             datagroup[res[i][BEG_EXON_INDEX]].name = 
                 res[i][CHR1_INDEX] + ": " + res[i][BEG_EXON_INDEX];
@@ -230,6 +239,8 @@ function parseSpliceString(data,ret){
         data[i].chr1 = res[i][CHR1_INDEX];
         data[i].mut_pos = res[i][MUT_POS_INDEX];
         data[i].chr2 = res[i][CHR2_INDEX];
+        data[i].wild_base = res[i][WILD_BASE_INDEX];
+        data[i].mut_base = res[i][MUT_BASE_INDEX];
         data[i].beg_exon = res[i][BEG_EXON_INDEX];
         data[i].end_exon = res[i][END_EXON_INDEX];
         data[i].gene = res[i][GENE_INDEX];
@@ -452,12 +463,7 @@ function addText(center,vertical,text,canvas,size){
             }
 	    canvas.text(start + .5 * (end-start), vertical - 30, text).attr("fill", "#2c2c2c").attr("font-size", 15).attr("font-weight", 700).attr('font-family', 'inherit');
             return temp;
-
-
         }
-
-       // <div onMouseOver="show('div1')" on MouseOut= "hide('div1')">
-
         function addSplice(start,end,vertical,height,width,canvas, down){
             var animatePath = function(path, duration, attributes) {
                 if (!duration) duration = 1500;

@@ -29,5 +29,5 @@ while ( my $line = <$fh> ) {
 	my $sequence_for_spliceman = $db -> seq($line_array[0],0,$db -> length($line_array[0]));
 	my @array = split(/\s+/, $sequence_for_spliceman);
 	
-	print join(":",@array)."\t".$line_array[1]."\t".$line_array[2]."\t".$line_array[3]."\t".$line_array[4]."\n";
+	print join(":",@array)."\t".$line_array[1]."\t".$line_array[2]."\t".$line_array[3]."\t".$line_array[4]."\t".$line_array[5]."\n";
 }

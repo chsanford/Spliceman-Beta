@@ -56,25 +56,91 @@ function pipeline_error($message) {
     return Redirect::to('upload')->withInput()->withErrors($message);
 }
 
-function download() {
-
-}
-
 function splicemanPipeline($inputFileContents, $visualization) {
+
+    //return $inputFileContents;
+
+    $mutations = explode("\n", $inputFileContents);
+
+    $servername = "localhost";
+    $username = "root";
+    $password = "4y8B2cx9";
+    $dbname = "spliceman_database";
+    $table = "Spliceman";
+
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    $mutations_in_db_output = "";
+    $mutations_not_in_db = "";
+
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    } 
+
+    for ($i = 0; $i < count($mutations) - 1; $i++){
+        $mutation_data = explode("\t", $mutations[$i]);
+        if (count($mutation_data) >= 5) {
+            $db_value = 
+                $mutation_data[0]."_".$mutation_data[1]."_"
+                    .$mutation_data[3]."_".$mutation_data[4];
+            $sql = "SELECT * FROM $table WHERE chr_loc_wild_mut = '$db_value'";
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0) {
+                // output data of each row
+                $row = $result->fetch_assoc();
+                $RBP_data = explode("_", $row["RBPs"]);
+                if ($row["enhancer_repressor"] == "-") {
+                    $ESE_seq = "n/a";
+                    $ESE_effect = "n/a";
+                } else {
+                    $ESE_seq = $row["ESE_seq"];
+                    $ESE_effect = $row["enhancer_repressor"];
+                }
+                $output_array = 
+                    [$mutation_data[0], $mutation_data[1], $mutation_data[2],
+                    $mutation_data[3], $mutation_data[4],
+                    $row["start_loc"], $row["end_loc"], $row["gene"],
+                    $row["pos_neg"], $row["strand_type"], $row["L1_percentile"],
+                    $RBP_data[0], $RBP_data[1], $RBP_data[2], $RBP_data[3],
+                    $RBP_data[4], $ESE_seq, $ESE_effect];
+                $mutations_in_db_output = 
+                    join($output_array, "\t")."\n".$mutations_in_db_output;
+            } else {
+                $mutations_not_in_db = $mutations[$i]."\n".$mutations_not_in_db;
+            }
+        }   
+    }    
+
+    $conn->close();
 
     $destinationPath = public_path().'/uploads';
 
     $filename_input = str_random(12);
+    $filename_database = str_random(12);
+    $filename_spliceman = str_random(12);
     $filename_spliceman = str_random(12);
     $filename_RBPs = str_random(12);
     $filename_bedtools_new = str_random(12);
         
     $path_input = $destinationPath."/".$filename_input;
+    $path_database = $destinationPath."/".$filename_database;
     $path_spliceman = $destinationPath."/".$filename_spliceman;
     $path_RBPs = $destinationPath."/".$filename_RBPs;
     $path_bedtools_new = $destinationPath."/".$filename_bedtools_new;
-    
-    $upload_success = file_put_contents($path_input, $inputFileContents);
+
+    $non_empty_db_file = ($mutations_in_db_output != "");
+    $non_empty_new_file = ($mutations_not_in_db != "");
+    if ($non_empty_new_file) {
+        $upload_success = file_put_contents($path_input, $mutations_not_in_db);
+    } else {
+        $upload_success = false;
+    }
+
+    if ($non_empty_db_file) {
+        file_put_contents($path_database, $mutations_in_db_output);
+    }
 
     if($upload_success) {
         exec("perl\
@@ -88,6 +154,7 @@ function splicemanPipeline($inputFileContents, $visualization) {
 
         if ($return) {
             File::delete($path_input);
+            File::delete($path_database);
             File::delete($path_spliceman);
             File::delete($path_RBPs);
             File::delete($path_bedtools_new);
@@ -97,8 +164,8 @@ function splicemanPipeline($inputFileContents, $visualization) {
         }
 
         if (count($output) > 0){
-
             File::delete($path_input);
+            File::delete($path_database);
             File::delete($path_spliceman);
             File::delete($path_RBPs);
             File::delete($path_bedtools_new);
@@ -115,9 +182,9 @@ function splicemanPipeline($inputFileContents, $visualization) {
             $bedtools_array,
             $return);
         
-
         if ($return) {
             File::delete($path_input);
+            File::delete($path_database);
             File::delete($path_spliceman);
             File::delete($path_RBPs);
             File::delete($path_bedtools_new);
@@ -132,8 +199,7 @@ function splicemanPipeline($inputFileContents, $visualization) {
                 "Error in pipeline, please contact administrator and provide 
                 step 2");
         }
-    //return "0";
-
+    
         $filename_L1_distance_final = str_random(12);
         $path_L1_distance_final = 
             $destinationPath."/".$filename_L1_distance_final;
@@ -147,6 +213,7 @@ function splicemanPipeline($inputFileContents, $visualization) {
 
         if ($return) {
             File::delete($path_input);
+            File::delete($path_database);
             File::delete($path_spliceman);
             File::delete($path_RBPs);
             File::delete($path_bedtools_new);
@@ -169,6 +236,7 @@ function splicemanPipeline($inputFileContents, $visualization) {
 
         if ($return) {
             File::delete($path_input);
+            File::delete($path_database);
             File::delete($path_spliceman);
             File::delete($path_RBPs);
             File::delete($path_bedtools_new);
@@ -194,13 +262,14 @@ function splicemanPipeline($inputFileContents, $visualization) {
 
         if ($return) {
             File::delete($path_input);
+            File::delete($path_database);
             File::delete($path_spliceman);
             File::delete($path_RBPs);
             File::delete($path_bedtools_new);
             File::delete($path_bedtools_final);
             File::delete($path_L1_distance_final);
             File::delete($path_ESEseq_final);
-            File::delete($path_RBP_final);
+            File::delete($path_RBPs_final);
 
             return pipeline_error(
                 "Error in pipeline, please contact administrator and provide 
@@ -249,10 +318,11 @@ function splicemanPipeline($inputFileContents, $visualization) {
             '$path_final_processing_temp2'\
             > '$path_final_processing_final'", 
             $final_result, 
-            $return);     
+            $return); 
 
         if ($return){
             File::delete($path_input);
+            File::delete($path_database);
             File::delete($path_spliceman);
             File::delete($path_RBPs);
             File::delete($path_bedtools_new);
@@ -277,14 +347,33 @@ function splicemanPipeline($inputFileContents, $visualization) {
             return pipeline_error($final_final_result_pre);
         }
 
+        $filename_final = str_random(12);
+        $path_final = $destinationPath."/".str_random(12);
         $path_download = $destinationPath."/"."file_to_download.txt";
         exec(
             "bash /var/www/html/spliceman_beta/process_final.sh\
             '$path_final_processing_final'\
-            > '$path_download'", 
+            > '$path_final'", 
             $final_final_result, 
             $return);
+
+        //return file_get_contents($path_final_processing_final).".......".file_get_contents($path_final);
+
+        if ($non_empty_db_file) {
+            shell_exec(
+                "cat\
+                '$path_final'\
+                '$path_database'\
+                > '$path_download'");
+        } else {
+            shell_exec(
+                "cp\
+                '$path_final'\
+                '$path_download'");
+        }
+
         File::delete($path_input);
+        File::delete($path_database);
         File::delete($path_spliceman);
         File::delete($path_RBPs);
         File::delete($path_bedtools_new);
@@ -295,13 +384,70 @@ function splicemanPipeline($inputFileContents, $visualization) {
         File::delete($path_final_processing_temp1);
         File::delete($path_final_processing_temp2);
         File::delete($path_final_processing_final);
+        File::delete($path_final);
+
+        // Add new elements to database.
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        // Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+        $database_entries = explode("\n", file_get_contents($path_download));
+
+        $stmt = $conn->prepare(
+            "INSERT INTO $table VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("siisssisds", $chr_loc_wild_mut, $start_loc, $end_loc,
+            $gene, $pos_neg, $strand_type, $L1_percentile, $RBPs, $ESE_seq,
+            $enhancer_repressor);
+
+        foreach ($database_entries as $database_entry) {
+            $entry_array = explode("\t", $database_entries[0]);
+            $chr_loc_wild_mut = $entry_array[0]."_".$entry_array[1].
+                "_".$entry_array[3]."_".$entry_array[4];
+            $start_loc = $entry_array[5];
+            $end_loc = $entry_array[6];
+            $gene = $entry_array[7];
+            $pos_neg = $entry_array[8];
+            $strand_type = $entry_array[9];
+            $L1_percentile = $entry_array[10];
+            $RBPs = $entry_array[11]."_".$entry_array[12]."_".$entry_array[13].
+                "_".$entry_array[14]."_".$entry_array[15];
+            if ($entry_array[17] == "n/a") {
+                $ESE_seq = 0;
+                $enhancer_repressor = "-";
+            } else {
+                $ESE_seq = $entry_array[16];
+                $enhancer_repressor = $entry_array[17];
+            }
+            $stmt->execute();
+        }
+
+        $stmt->close();
+        $conn->close();
 
         if ($visualization) {
-            $final_final_result = file_get_contents($path_download);
-            return Redirect::to('result')->with('message',$final_final_result);
+            $final_output = file_get_contents($path_download);
+            return Redirect::to('result')->with('message',$final_output);
         } else {
             return Response::download($path_download);
         }
+
+    } else {
+        if ($non_empty_db_file) {
+            $path_download = $destinationPath."/"."file_to_download.txt";
+            shell_exec(
+                "cp\
+                '$path_database'\
+                '$path_download'");
+             if ($visualization) {
+                $final_output = file_get_contents($path_download);
+                return Redirect::to('result')->with('message',$final_output);
+            } else {
+                return Response::download($path_download);
+            }
+        }
+
     }
 }
 

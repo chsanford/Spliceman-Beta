@@ -137,9 +137,9 @@ while ( my $line = <$fh> ) {
 
 #Print the sequence_for_spliceman to the output file
 		# print $fh1 ">$fields[0]\t$fields[1]\n".uc($final_fasta_seq)."\n";
-		print $fh1 uc($final_fasta_seq)."\t".$fields[2]."\t".$fields[0]."\t".$fields[1]."\t".$fields[3]."\n";
-		print $fh2 uc($wt_sequence_RBP)."\t".uc($mut_sequence_RBP)."\t".$fields[2]."\t".$fields[0]."\t".$fields[1]."\t".$fields[3]."\n";
-		print $fh3 $fields[0]."\t".($fields[1]-1)."\t".$fields[1]."\t".$fields[2]."\t".$fields[0]."\t".$fields[1]."\t".$fields[3]."\n";
+		print $fh1 uc($final_fasta_seq)."\t".$fields[2]."\t".$fields[0]."\t".$fields[1]."\t".$fields[3]."\t".$fields[4]."\n";
+		print $fh2 uc($wt_sequence_RBP)."\t".uc($mut_sequence_RBP)."\t".$fields[2]."\t".$fields[0]."\t".$fields[1]."\t".$fields[3]."\t".$fields[4]."\n";
+		print $fh3 $fields[0]."\t".($fields[1]-1)."\t".$fields[1]."\t".$fields[2]."\t".$fields[0]."\t".$fields[1]."\t".$fields[3]."\t".$fields[4]."\n";
 		}
 		# else {
 		# 	print "It was not possible to convert this variant, because the mutation is
