@@ -17,7 +17,7 @@ analyzing the potential for mutations that affect splicing on a large scale.
 
 ### Uploading Data
 To use Spliceman 2, go to the URL 
-"http://fairbrother.biomed.brown.edu/beta/upload". Data can be inputted in two 
+http://fairbrother.biomed.brown.edu/beta/upload. Data can be inputted in two 
 ways.
 
 For small inputs, data can be entered into the text box. One mutation can be 
@@ -89,5 +89,11 @@ of the L1-distance percentiles. The most significant values have red bars,
 while all others have blue.
 
 ## Code Structure
+
+Spliceman 2 is implemented using the Laravel framework. This section explains
+which parts of the Laravel structure are used for different parts of the 
+project.
+
+### 'app/Http/routes.php'
 
 ## Database
