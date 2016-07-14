@@ -175,10 +175,3 @@ file.
 | ESEseq | DOUBLE | The total change in ESEseq score. 0 if not an exon. |
 | enhancer_repressor | CHAR(1) | The estimated affect on splicing based on the ESEseq score. "-" if not an exon, "N" if no effect, "S" if suppressor, "E" if enhancer. |
 | motifs | TEXT | The motifs corresponding to the RBPs, separated by commas. |
-
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
-
