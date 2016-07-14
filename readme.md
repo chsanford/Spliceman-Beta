@@ -43,6 +43,14 @@ The "Reset Values" button resets to allow for the input of different data.
 variants can be suggested to the Fairbrother lab to be added. "Process 
 Sequences" proceeds to the next step.
 
+### Running the Queue
+
+Queueing is a tool in Laravel that significantly speeds up the process, and
+allows for multiple requests the be placed without the server crashing.
+To enable the queue to be used, use the command `php artisan queue:listen`
+in the root directory for the app on the server. This must be running for data
+to be processed.
+
 ### Processing Data
 
 After submitting data, users are moved to an intermediate page. The URL of
@@ -51,7 +59,10 @@ processes input. The pipeline will run regardless of whether the page is open.
 
 Once the process is complete, two or three buttons will appear on the page.
 The "Download Results" button downloads a text file containing the outputs of
-the pipeline.
+the pipeline. The "View Visualization of Results" button moves to another
+page where a visualization is displayed. If there were errors, a "Download
+Errors" button will be present that downloads a file that specifies the
+mutation where an error occurred and what error occurred.
 
 ### Viewing Results.
 
@@ -92,8 +103,38 @@ while all others have blue.
 
 Spliceman 2 is implemented using the Laravel framework. This section explains
 which parts of the Laravel structure are used for different parts of the 
-project.
+project that are likely to be edited. All code, except for the scripts, is
+written in PHP.
 
 ### `app/Http/routes.php`
+
+The routes file determines the action of the server based on a URL designated
+by a user. For simple pages, the routes file simply redirects to the 
+corresponding view. For more complicated pages, the code is detailed under
+a controller corresponding to the page.
+
+### `app/Http/Controllers`
+
+For uploading data and processing data, the routes file directs to a 
+corresponding controller file. This controller file specifies the actions
+of the server based on the input submitted. When data is uploaded, the 
+controller determines which data is already included in the database and
+dispatches the remaining data to a job which can be queued.
+
+### `app/Http/Jobs`
+
+The one current job, `ProcessNewInput`, contains the bulk of the work for
+a request. Most of the pipeline that processes input is contained here.
+After processing the input, the results are added to the database so this
+will not need to be repeated on future requests. This is the part that
+is dispatched to the server; it is not run on the user's end. 
+
+### `resources/views`
+
+### `scripts`
+
+### `genome_data`
+
+### `public/uploads`
 
 ## Database
