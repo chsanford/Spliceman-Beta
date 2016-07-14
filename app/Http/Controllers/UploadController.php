@@ -46,16 +46,16 @@ class UploadController extends Controller {
 
 	        if (Input::hasFile('file')) {
 	            $output = Input::get('output');
-	            $visualization = ($output == 'visualization');
+	            //$visualization = ($output == 'visualization');
 	            // process the uploaded file
 	            //$filename = Input::file('file')->getClientOriginalName();
 	            //$extension = Input::file('file')->getClientOriginalExtension();
 	            $file = Input::file('file');
 	            //$homepage = file_get_contents($file);
-	            return $this->spliceman_pipeline($file, $visualization);
+	            return $this->spliceman_pipeline($file);//, $visualization);
 	        } else {
 	            $output = Input::get('output');
-	            $visualization = ($output == 'visualization');
+	            //$visualization = ($output == 'visualization');
 	            $input_text = Input::get('sequence');
 
 	            $destinationPath = public_path().'/uploads';
@@ -93,7 +93,7 @@ class UploadController extends Controller {
                 File::delete($file_new);
                 //File::delete($file_new2);
 
-	            return $this->spliceman_pipeline($file_new2, $visualization);
+	            return $this->spliceman_pipeline($file_new2);//, $visualization);
 	        }
 	    }
 	}
@@ -103,7 +103,7 @@ class UploadController extends Controller {
 	 *
 	 * @return Response
 	 */
-	private function spliceman_pipeline($path_start, $visualization) {
+	private function spliceman_pipeline($path_start) {
 
 	    $table = "Spliceman";
 

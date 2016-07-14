@@ -39,8 +39,8 @@
           </div>
 
           <div class="form-group">
-            {!! Form::checkbox('output', 'visualization') !!}
-            View Visualization of Results
+            <!--{!! Form::checkbox('output', 'visualization') !!}
+            View Visualization of Results-->
           </div>
 
           <div class="row">
