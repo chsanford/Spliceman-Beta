@@ -1,11 +1,6 @@
-/bootstrap/compiled.php
 /vendor
-composer.phar
-composer.lock
-.env.*.php
-.env.php
-.DS_Store
-Thumbs.db
+/node_modules
+.env
 
 hg19.fa
 hg19_L1_distance_only_hexamers_dif_by_one.fa.index
