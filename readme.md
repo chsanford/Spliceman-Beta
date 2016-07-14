@@ -161,17 +161,17 @@ SQL command line. Run the command `use spliceman_database;` to load the
 correct database. From there, users can submit SQL queries to get data.
 The columns in the database correspond mostly to the columns of the output
 file.
-Column | Data Type | Description
---- | --- | ---
-chr_loc_wild_mut | CHAR(20) | The chromosome number ("chrN"), the location, the wild base pair, and the mutant base pair, separated by underscores.
-start_loc | INT(11) | The starting location of the intron or exon that contains the mutation.
-end_loc | INT(11) | The end location of that intron or exon.
-gene | CHAR(20) | The gene that contains the mutation.
-pos_neg | CHAR(1) | "+" if the sequence is positive and "-" if it is negative.
-strand_type | TEXT | The type of strand.
-L1_percentile | INT(11) | The percentile of the L1-distance score.
-RBPs | TEXT | The most likely RBPs, separated by commas.
-ESEseq | DOUBLE | The total change in ESEseq score. 0 if not an exon.
-enhancer_repressor | CHAR(1) | The estimated affect on splicing based on the ESEseq score. "-" if not an exon, "N" if no effect, "S" if suppressor, "E" if enhancer.
-motifs | TEXT | The motifs corresponding to the RBPs, separated by commas.
+| Column | Data Type | Description |
+| --- | --- | --- |
+| chr_loc_wild_mut | CHAR(20) | The chromosome number ("chrN"), the location, the wild base pair, and the mutant base pair, separated by underscores. |
+| start_loc | INT(11) | The starting location of the intron or exon that contains the mutation. |
+| end_loc | INT(11) | The end location of that intron or exon. |
+| gene | CHAR(20) | The gene that contains the mutation. |
+| pos_neg | CHAR(1) | "+" if the sequence is positive and "-" if it is negative. |
+| strand_type | TEXT | The type of strand. |
+| L1_percentile | INT(11) | The percentile of the L1-distance score. |
+| RBPs | TEXT | The most likely RBPs, separated by commas. |
+| ESEseq | DOUBLE | The total change in ESEseq score. 0 if not an exon. |
+| enhancer_repressor | CHAR(1) | The estimated affect on splicing based on the ESEseq score. "-" if not an exon, "N" if no effect, "S" if suppressor, "E" if enhancer. |
+| motifs | TEXT | The motifs corresponding to the RBPs, separated by commas. |
 
