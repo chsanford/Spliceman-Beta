@@ -94,6 +94,6 @@ Spliceman 2 is implemented using the Laravel framework. This section explains
 which parts of the Laravel structure are used for different parts of the 
 project.
 
-### 'app/Http/routes.php'
+### `app/Http/routes.php`
 
 ## Database
