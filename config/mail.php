@@ -121,4 +121,8 @@ return [
 
 	'pretend' => false,
 
+	'mailgun' => [
+	    'domain' => 'fairbrother.biomed.brown.edu',
+	    'secret' => 'your-mailgun-key'
+	]
 ];

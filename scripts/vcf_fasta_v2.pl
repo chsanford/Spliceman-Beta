@@ -133,7 +133,7 @@ while (my $line = <$fh>) {
 			print $fh1 uc($final_fasta_seq)."\t".$fields[2]."\t".$fields[0]."\t".$fields[1]."\t".$fields[3]."\t".$fields[4]."\n";
 			print $fh2 uc($wt_sequence_RBP)."\t".uc($mut_sequence_RBP)."\t".$fields[2]."\t".$fields[0]."\t".$fields[1]."\t".$fields[3]."\t".$fields[4]."\n";
 			print $fh3 $fields[0]."\t".($fields[1]-1)."\t".$fields[1]."\t".$fields[2]."\t".$fields[0]."\t".$fields[1]."\t".$fields[3]."\t".$fields[4]."\n";
-			print $fh5 join("\t", @fields[0..4])."\n";#$fields[0]."\t".$fields[1]."\t".$fields[2]."\t".$fields[3]."\t".$fields[4]."\n";
+			#print $fh5 join("\t", @fields[0..4])."\n";#$fields[0]."\t".$fields[1]."\t".$fields[2]."\t".$fields[3]."\t".$fields[4]."\n";
 		} else {
 			print $fh4 join("\t", @fields[0..4])."\t".$error."\n";
 		}

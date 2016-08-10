@@ -64,6 +64,18 @@ return [
 			'strict'    => false,
 		],
 
+		'dashboard' => [
+			'driver'    => 'mysql',
+			'host'      => env('DB_HOST', 'localhost'),
+			'database'  => 'testfblabdb',
+			'username'  => env('DB_USERNAME', 'root'),
+			'password'  => env('DB_PASSWORD', '4y8B2cx9'),
+			'charset'   => 'utf8',
+			'collation' => 'utf8_unicode_ci',
+			'prefix'    => '',
+			'strict'    => false,
+		],		
+
 		'pgsql' => [
 			'driver'   => 'pgsql',
 			'host'     => env('DB_HOST', 'localhost'),

@@ -20,6 +20,10 @@ Route::get('result', function() {
     return View::make('results');
 });
 
+Route::get('dashboard', function() {
+    return View::make('dashboard');
+});
+
 Route::get('methods', function() {
     return View::make('methods');
 });

@@ -74,16 +74,19 @@ while ( my $line = <$fh> ) {
  	}
 
  	#assigns a letter corresponding to whether the mutation is a splicing enhancer or suppressor, or has no net effect
- 	my $splicing_effect = "N";
+ 	my $splicing_effect = "?";
  	if ($sum_ESEseq > $ESESEQ_ENHANCER) {
- 		$splicing_effect = "E";
+ 		$splicing_effect = "?";
  	}
  	elsif ($sum_ESEseq < $ESESEQ_SUPPRESSOR) {
- 		$splicing_effect = "S";
+ 		$splicing_effect = "?";
  	}
 
  	#prints data into a text file to be used later
- 	print $sum_ESEseq."\t".$splicing_effect."\t".$line_array[1]."\t".$line_array[2]."\t".$line_array[3]."\t".$line_array[4]."\n";
+
+ 	print $sum_ESEseq."\t".$splicing_effect."\t".join("\t", @line_array)."\n";
+
+ 	#print $sum_ESEseq."\t".$splicing_effect."\t".$line_array[1]."\t".$line_array[2]."\t".$line_array[3]."\t".$line_array[4]."\n";
 }
 
 close $fh;

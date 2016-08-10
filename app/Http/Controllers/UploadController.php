@@ -16,8 +16,6 @@ class UploadController extends Controller {
 	 * @return Response
 	 */
 	public function index() {
-		//return $request->input('recommend');
-
 		$file_sample_vcf = public_path()."/example_2.vcf";
 
 		if (Input::get('recommend')) {
@@ -40,31 +38,35 @@ class UploadController extends Controller {
 
         	$validator = Validator::make(Input::all(), $rules);
 
+        	$input_id = str_random(12);
+    		$destinationPath = public_path().'/uploads';
+
+			$final_directory_path = $destinationPath.'/'.$input_id."_final";
+    		mkdir($final_directory_path);
+
 	        if ($validator->fails()) {
 	            return Redirect::to('upload')->withInput()->withErrors($validator);
 	        }
 
 	        if (Input::hasFile('file')) {
 	            $output = Input::get('output');
-	            //$visualization = ($output == 'visualization');
-	            // process the uploaded file
-	            //$filename = Input::file('file')->getClientOriginalName();
-	            //$extension = Input::file('file')->getClientOriginalExtension();
 	            $file = Input::file('file');
-	            //$homepage = file_get_contents($file);
-	            return $this->spliceman_pipeline($file);//, $visualization);
+
+	            $file_new = $final_directory_path."/input";
+	            rename($file, $file_new);
+
+	            $process_job = new ProcessNewInput($input_id, $file_new);
+        		$this->dispatch($process_job);
+        		return Redirect::to('processing/'.$input_id);
 	        } else {
 	            $output = Input::get('output');
-	            //$visualization = ($output == 'visualization');
 	            $input_text = Input::get('sequence');
 
-	            $destinationPath = public_path().'/uploads';
-
 	            $filename = str_random(12);
-	            $filename2 = str_random(12);
+	            $filename2 = $input_id;
 
 	            $file_new = $destinationPath."/".$filename;
-	            $file_new2 = $destinationPath."/".$filename2;
+	            $file_new2 = $final_directory_path."/input";
 
 	            File::put($file_new, $input_text);
 
@@ -86,94 +88,19 @@ class UploadController extends Controller {
 	                    "Error in pipeline, please contact administrator");
 	            }
 	            if (count($output) > 0) {
-	                return Redirect::to('upload')->withInput()->withErrors($output);
+	                return Redirect::to('upload')->
+	                	withInput()->
+	                	withErrors($output);
 	            }
-	            //$homepage = file_get_contents($file_new2);
 
                 File::delete($file_new);
-                //File::delete($file_new2);
 
-	            return $this->spliceman_pipeline($file_new2);//, $visualization);
+     
+            	$process_job = new ProcessNewInput($input_id, $file_new2);
+        		$this->dispatch($process_job);
+        		return Redirect::to('processing/'.$input_id);
 	        }
 	    }
-	}
-
-	/**
-	 * Processes the input through the pipeline
-	 *
-	 * @return Response
-	 */
-	private function spliceman_pipeline($path_start) {
-
-	    $table = "Spliceman";
-
-	    $destination_path = public_path().'/uploads';
-        $input_id = str_random(12);
-        $final_directory_path = $destination_path.'/'.$input_id."_final";
-        mkdir($final_directory_path);
-        $path_input = $final_directory_path."/input";
-        $path_processed = $final_directory_path."/processed";
-
-        $read_start = fopen($path_start, "r") or die ("Unable to open file!");
-        $write_input = fopen($path_input, "a") or die ("Unable to open file!");
-        $write_processed = fopen($path_processed, "a") or die ("Unable to open file!");
-
-	    $non_empty_new_file = false;
-	    $valid_mutations = false;
-
-	    while (! feof($read_start)) {
-	    	$mutation = fgets($read_start);
-	        if (ctype_space($mutation)) {
-	            break;
-	        }
-	        $mutation_data = explode("\t", $mutation);
-	        if (!preg_match("/^chr/", $mutation_data[0])) {
-	        	$mutation_data[0] = "chr".$mutation_data[0];
-	        }
-	        if ($this->is_valid($mutation_data)) {
-	            $db_key = 
-	                $mutation_data[0]."_".$mutation_data[1]."_"
-	                    .$mutation_data[3]."_".$mutation_data[4];
-	            // Removes newline characters, if they are present
-	            $db_key = str_replace("\n", "", $db_key);
-	            $result = DB::table($table)->where('chr_loc_wild_mut', $db_key)->first();
-	            $valid_mutations = true;
-	            $mutation_input = $mutation_data[0]."\t".$mutation_data[1]
-	            	."\t".$mutation_data[2]."\t".$mutation_data[3]
-	            	."\t".$mutation_data[4];
-				$mutation_input = str_replace("\n", "", $mutation_input);
-
-	            if (count($result) == 0) {
-	            	fwrite($write_input, $mutation_input."\n");
-	            	$non_empty_new_file = true;
-	            } else {
-	            	fwrite($write_processed, $mutation_input."\n");
-	            }
-	        }   
-	    } 
-
-	    fclose($read_start);
-	    fclose($write_input);
-	    fclose($write_processed);
-
-	    if (!$valid_mutations) {
-	    	return Redirect::to('upload/')->withInput()->withErrors(
-                "The file was not readable; no mutations could be identified.");
-	    }
-
-	    if ($non_empty_new_file) {
-	    	$process_job = new ProcessNewInput($input_id);
-	    	//return get_object_vars($process_job);
-        	$this->dispatch($process_job);
-        	return Redirect::to('processing/'.$input_id);
-	    }
-
-		$path_progress = $final_directory_path."/progress";
-        $write_progress = fopen($path_progress, "w");
-        fwrite($write_progress, "Job complete!");
-        fclose($write_progress);
-	    return Redirect::to('processing/'.$input_id);
-
 	}
 
     /**

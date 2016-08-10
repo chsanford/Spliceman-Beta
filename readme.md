@@ -25,7 +25,8 @@ expressed on each line. Include the chromosome number (written as "chrN" where
 N is the number or simply as "N"), the location of the mutation on the 
 chromosome as an 
 integer, the base pair of the wild type, and the base pair of the mutant type,
-with each input separated by white space.
+with each input separated by white space. A maximum of five mutations can be
+entered in the text box.
 
 For larger inputs, enter the data in a VCF file. The first column must be the
 the chromosome number (writted as "chrN" or "N"), the second the 
@@ -47,9 +48,7 @@ Sequences" proceeds to the next step.
 
 Queueing is a tool in Laravel that significantly speeds up the process, and
 allows for multiple requests the be placed without the server crashing.
-To enable the queue to be used, use the command `php artisan queue:listen`
-in the root directory for the app on the server. This must be running for data
-to be processed.
+The queue should automatically run on the server.
 
 ### Processing Data
 
@@ -57,10 +56,13 @@ After submitting data, users are moved to an intermediate page. The URL of
 this page is unique to each job. Thus, a user can return to this page at any time to check on their results. The page tracks progress in the pipeline that
 processes input. The pipeline will run regardless of whether the page is open.
 
-Once the process is complete, two or three buttons will appear on the page.
+Once the process is complete, four or five buttons will appear on the page.
 The "Download Results" button downloads a text file containing the outputs of
-the pipeline. The "View Visualization of Results" button moves to another
-page where a visualization is displayed. If there were errors, a "Download
+the pipeline. The "Visualize Results" button moves to another
+page where a visualization is displayed. The "Download Dashboard Data" and
+"Visualize Dashboard Data" allow the user to view the data from Dashboard
+or ESM Browser if the mutation is present in that database.
+If there were errors, a "Download
 Errors" button will be present that downloads a file that specifies the
 mutation where an error occurred and what error occurred.
 
@@ -70,23 +72,26 @@ If the results are downloaded, the downloaded file organizes the data in
 columns, where each row corresponds to one inputted mutation. 
 - The entries in the five columns are the same as those from the
 input file. 
-- Columns 6 and 7 are the start and end locations of the intron or
+- Column 6 is the ID for the transcript that contains the mutation
+- Columns 7 and 8 are the start and end locations of the intron or
 exon that contains the mutation. 
-- Column 8 is the gene that the mutation lies
+- Column 9 is the name gene that the mutation lies
 on. 
-- Column 9 is "+" if the sequence is read positively and "-" if read 
+- Column 10 is the gene's ID.
+- Column 11 is "+" if the sequence is read positively and "-" if read 
 negatively. 
-- Column 10 classifies the sequence containing the mutation between
+- Column 12 classifies the feature containing the mutation between
 "intron", "intron_terminal3", "intron_terminal5", "exon_terminal3",
 "exon_terminal5", and "exon_internal". 
-- Column 11 is the percentile of the
+- Column 13 classifies whether the mutation is an intronic or exonic variant.
+- Column 14 is the percentile of the
 change in L1-distance. 
-- If the mutation is on an exon, column 12 is the total change in ESEseq scores
-and column 13 is an estimation of whether that scores affects splicing, where
-"N" means "no effect," "S" means "suppressor," and "E" means "enhancer." If it
-lies on an intron, both columns are "n/a".
-- Columns 14 thru 18 are the five most likely RBPs in order.
-- Columns 19 thru 23 are the motifs corresponding to each of the RBPs in the
+- If the mutation is on an exon, column 15 is the total change in ESEseq
+scores.
+- Column 16 is the distance from the nearest splice site.
+- Column 17 is the nearest splice site, either 3' or 5'.
+- Columns 18 thru 22 are the five most likely RBPs in order.
+- Columns 23 thru 24 are the motifs corresponding to each of the RBPs in the
 preceding columns.
 
 If the results are visualized, mutations are grouped by intron and exon. For
@@ -156,7 +161,8 @@ create the record for future use.
 
 Spliceman 2 uses a SQL database to record our information and to make avoid
 repeating taxing computations. The database can be run from the server's 
-command line on root with the command `mysql -u root -p`. This will open the
+command line on root with the command `mysql -u root -p`. Enter the lab's 
+password for databases. This will open the
 SQL command line. Run the command `use spliceman_database;` to load the 
 correct database. From there, users can submit SQL queries to get data.
 The columns in the database correspond mostly to the columns of the output

@@ -38,11 +38,6 @@
             {!! Form::file('file', null, array('class'=>'btn btn-info btn-block','placeholder'=>'Choose File')) !!}
           </div>
 
-          <div class="form-group">
-            <!--{!! Form::checkbox('output', 'visualization') !!}
-            View Visualization of Results-->
-          </div>
-
           <div class="row">
             <div class="col-xs-6 col-sm-6 col-md-6">
               <input type="submit" name="process_sample_text" value="Load Sample Data" class="btn btn-info btn-block">
@@ -68,9 +63,9 @@
 
               <!-- {!! Form::submit('Process Sequences', array('class'=>'btn btn-info btn-block')) !!} -->
             </div>
-            </div>
-
           </div>
+
+        </div>
 
 
         {!! Form::close() !!}

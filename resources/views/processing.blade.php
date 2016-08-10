@@ -22,24 +22,13 @@
       </div>
       <div class="panel-body" style="background: #f0f0f0">
         {!! Form::open(['files'=>true]) !!}
-          <!--<div id='view_progress'>
-            <div class='row'>
-              <div class='col-xs-12 col-sm-12 col-md-12'>
-                <input type='submit'
-                  name='progress'
-                  value='View Progress'
-                  class='btn btn-info btn-block $progress_active'>
-              </div>
-            </div>
-            <br>
-          </div>-->
           <div id='download'>
             <div class='row'>
               <div class='col-xs-12 col-sm-12 col-md-12'>
                 <input type='submit'
                   name='download' 
                   value='Download Results'
-                  class='btn btn-info btn-block $results_active'>
+                  class='btn btn-info btn-block'>
               </div>
             </div>
             <br>
@@ -49,11 +38,33 @@
               <div class='col-xs-12 col-sm-12 col-md-12'>
                 <input type='submit'
                   name='visualization' 
-                  value='View Visualization of Results'
-                  class='btn btn-info btn-block $results_active'>
+                  value='Visualize Results'
+                  class='btn btn-info btn-block'>
               </div>
             </div>
             <br>
+          </div>
+          <div id='dashboard'>
+            <div class='row'>
+              <div class='col-xs-12 col-sm-12 col-md-12'>
+                <input type='submit'
+                  name='dashboard' 
+                  value='Download Dashboard Data'
+                  class='btn btn-info btn-block'>
+              </div>
+            </div>
+            <br> 
+          </div> 
+          <div id='dash_vis'>
+            <div class='row'>
+              <div class='col-xs-12 col-sm-12 col-md-12'>
+                <input type='submit'
+                  name='dash_vis' 
+                  value='Visualize Dashboard Data'
+                  class='btn btn-info btn-block'>
+              </div>
+            </div>
+            <br> 
           </div>
           <div id='errors'>
             <div class='row'>
@@ -61,7 +72,7 @@
                 <input type='submit'
                   name='errors' 
                   value='Download Errors'
-                  class='btn btn-danger btn-block $errors_active'>
+                  class='btn btn-danger btn-block'>
               </div>
             </div> 
           </div> 
@@ -81,10 +92,14 @@
   var download = document.getElementById('download');
   var visualization = document.getElementById('visualization');
   var errors = document.getElementById('errors');
+  var dashboard = document.getElementById('dashboard');
+  var dash_vis = document.getElementById('dash_vis');
 
   download.style.display = 'none';
   visualization.style.display = 'none';
   errors.style.display = 'none';
+  dashboard.style.display = 'none';
+  dash_vis.style.display = 'none';
 
   var checked_errors = false;
   var errors_visible = false;
@@ -117,22 +132,15 @@
     if (results_visible) {
       download.style.display = 'block';
       visualization.style.display = 'block';
-      if (!checked_errors) {
-        errors_http = new XMLHttpRequest();
-        errors_http.open('HEAD', path_errors, false);
-        errors_http.send();
-        errors_visible = (errors_http.status!=404);
-        checked_errors = true;
-      }
-      if (errors_visible) {
-        errors.style.display = 'block';
-      } else {
-        errors.style.display = 'none';
-      }
+      dashboard.style.display = 'block';
+      dash_vis.style.display = 'block';
+      errors.style.display = 'block';
     } else {
       download.style.display = 'none';
       visualization.style.display = 'none';
       errors.style.display = 'none';
+      dashboard.style.display = 'none';
+      dash_vis.style.display = 'none';
     }
 
   }
