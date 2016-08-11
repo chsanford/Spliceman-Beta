@@ -1,8 +1,0 @@
-chr20	2300608	C	T	ENST00000381458	7	ERROR: Variant too far from splice junction.
-chr20	2300608	C	T	ENST00000381458	8	ERROR: Variant too far from splice junction.
-chr20	2300608	C	T	ENST00000463090	3	ERROR: Variant too far from splice junction.
-chr20	2300608	C	T	ENST00000463090	4	ERROR: Mutation on this transcript is on an exon terminal.
-chr20	2301308	T	G	ENST00000381458	7	ERROR: Variant too far from splice junction.
-chr20	2301308	T	G	ENST00000381458	8	ERROR: Variant too far from splice junction.
-chr20	2301308	T	G	ENST00000463090	3	ERROR: Variant too far from splice junction.
-chr20	2301308	T	G	ENST00000463090	4	ERROR: Mutation on this transcript is on an exon terminal.

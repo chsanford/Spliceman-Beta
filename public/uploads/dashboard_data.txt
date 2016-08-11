@@ -1,1 +1,0 @@
-Idm	coord	ref_plus	ref_neg	vit_wu	vit_mu	vit_ws_ann	vit_ms_ann	vitRmw_ann	vitP_ann	viv_wu	viv_mu	viv_ws_ann	viv_ms_ann	vivRmw_ann	vivP_ann
