@@ -21,5 +21,5 @@ RefSeq_exons_introns_no_ovl_2.txt
 27_new_bedtools
 27_new_spliceman
 27_genes_forsplicemannew_please2_processed.txt
-genome_data/reformatted_coding_exons.txt
-genome_data
+reformatted_coding_exons.txt
+coding_exons_with_introns_divided_75nts_flanking.txt
